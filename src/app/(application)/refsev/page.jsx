@@ -6,7 +6,7 @@ import CommonConsultation from "@/components/CommonComponents/CommonConsulationC
 import Footer from "@/components/Footer/Footer";
 import EnterpriseCard from "@/components/About us/EnterpriseCard";
 import FAQ from "@/components/Home/FAQ";
-import InpageNavbar from "@/components/Navbar/inpagenavbar";
+
 
 const sections = [
   { heading: "About" },
