@@ -2,30 +2,37 @@
 
 import CareersLayout from "@/components/Careers/CareersLayout";
 import CareersHeroText from "@/components/Careers/CareersHeroText";
-import JobListing from "@/components/Careers/JobListing/JobListing";
-import WhatYouWantToDo from "@/components/Careers/WhatYouWantToDo/WhatYouWantToDo";
-import TeamStory from "@/components/Careers/TeamStory/TeamStory";
-import LearningDevelopment from "@/components/Careers/LearningDevelopment/LearningDevelopment";
-import CareersFAQ from "@/components/Careers/CareersFAQ/CareersFAQ";
-import YourGrowthPartner from "@/components/Careers/YourGrowthPartner/YourGrowthPartner";
+import JoinUsPanel from "@/components/Careers/JoinUsPanel";
+import JobListingSection from "@/components/Careers/JobListingSection";
+import WhatYouWantToDo from "@/components/Careers/WhatYouWantToDo";
+import TeamStory from "@/components/Careers/TeamStory";
+import LearningDevelopment from "@/components/Careers/LearningDevelopment";
+import OurCulture from "@/components/Careers/OurCulture";
+import GrowthQuoteBand from "@/components/Careers/GrowthQuoteBand";
+import WhatSetsUsApart from "@/components/Careers/WhatSetsUsApart";
+import JoinUsSocialBand from "@/components/Careers/JoinUsSocialBand";
+import careerHeroBg from "@/assets/career/Hero Image.svg";
 
 const page = () => {
     return (
         <CareersLayout
-            cardBg="bg-white"
+            heroBg={careerHeroBg}
+            heroAspectRatio
             heroContent={<CareersHeroText />}
             afterContent={
                 <>
+                    <JoinUsPanel />
+                    <JobListingSection />
                     <WhatYouWantToDo />
                     <TeamStory />
                     <LearningDevelopment />
-                    <YourGrowthPartner />
-                    <CareersFAQ />
+                    <GrowthQuoteBand />
+                    <OurCulture />
+                    <WhatSetsUsApart />
+                    <JoinUsSocialBand />
                 </>
             }
-        >
-            <JobListing />
-        </CareersLayout>
+        />
     );
 };
 

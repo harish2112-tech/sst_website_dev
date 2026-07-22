@@ -1,4 +1,18 @@
+export const sections = [
+  "Summary",
+  "Security Privacy Policy",
+];
+
+
 export const securityPolicy = {
+  Summary: {
+    title: "Summary of our Security Privacy Policy",
+    paragraphs: [
+      "At TCS, safeguarding information is a fundamental part of how we operate. We are committed to protecting business-sensitive and personal information entrusted to us by our customers, associates, and partners through robust security practices and continuous improvement.",
+      "Our security commitment: We implement comprehensive physical, technical, and organizational security controls to protect our information assets and IT systems from evolving threats. Our Security Management System is designed to identify, prevent, detect, respond to, and recover from security incidents while ensuring business continuity, regulatory compliance, and the secure adoption of emerging technologies such as Artificial Intelligence, Blockchain, and Quantum technologies.",
+      "This policy applies globally to TCS, its wholly owned subsidiaries, associates, business associates, and authorized external parties. It outlines our approach to information security governance, third-party risk management, security awareness, incident reporting, and the responsibilities of everyone who has access to TCS information and technology resources.",
+    ],
+  },
   title: "Security Privacy Policy",
   paragraphs: [
     "Tata Consultancy Services (TCS) is a digital transformation and technology partner of choice for industry-leading organizations worldwide. Since its inception in 1968, TCS has upheld the highest standards of innovation, engineering excellence and customer service. As part of its operations, TCS has access to business-sensitive information (including personal information), the protection of which is crucial to TCS and its clients’ business interests.",
