@@ -50,7 +50,7 @@ const itemVariants = {
 
 export default function TeamStory() {
     return (
-        <section className="bg-[#fdfdfd] py-16 sm:py-10">
+        <section className="bg-[#fdfdfd] py-16 sm:py-20">
             <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
                 <Image src={separatorLine} alt="" className="w-full h-px object-cover mb-12 opacity-25" />
 

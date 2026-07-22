@@ -8,6 +8,22 @@ function Paragraph({ item }) {
     return <p className="text-black font-light leading-[19px] mb-4">{item}</p>;
   }
 
+  if (item.heading) {
+    return <p className="text-black font-semibold text-lg leading-[19px] mb-4">{item.text}</p>;
+  }
+
+  if (item.bullets) {
+    return (
+      <ul className="list-disc pl-6 space-y-2 text-black font-light mb-4">
+        {item.bullets.map((bullet, index) => (
+          <li key={index} className="leading-[19px]">
+            {bullet}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   return null;
 }
 

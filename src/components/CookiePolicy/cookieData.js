@@ -12,52 +12,48 @@ export const sectionContent = {
   Introduction: {
     title: "Cookie Policy",
     paragraphs: [
-      "This Cookie Policy explains how Support Studio Technologies (SST) uses cookies and similar technologies on www.supportstudio.tech (the “Website”), what these technologies are used for, and the choices available to you.",
-      "By continuing to browse or use our Website, you agree to our use of cookies as described in this Cookie Policy, unless you have disabled them in accordance with the guidance below.",
+      `This Cookie Policy explains how Support Studio Technologies ("SST") uses cookies and the purposes for which they are used, and the choices available to you.`,
+      "By continuing to use our Website, you consent to the use of cookies as described in this Policy, unless you choose to disable them through your browser settings or cookie preferences.",
     ],
   },
 
   "What Are Cookies": {
-    title: "What Are Cookies",
+    title: "What Are Cookies?",
     paragraphs: [
-      "Cookies are small text files that a website stores on your device (computer, tablet or mobile) when you visit it. They are widely used to make websites work, or work more efficiently, as well as to provide information to the owners of the site.",
-      "Cookies set directly by SST are called “first-party cookies”. Cookies set by parties other than SST — for example an embedded scheduling widget, map, or video — are called “third-party cookies”. Third-party cookies enable functionality provided on or through the Website (such as booking a call, viewing our office location, or watching a video) and are managed by the party that placed them, not by SST.",
+      "Cookies are small text files stored on your device when you visit a website. They help websites function efficiently, improve user experience, remember preferences, and provide information about how the Website is used.",
+      "Cookies set by Support Studio Technologies are referred to as first-party cookies, while cookies set by external service providers are referred to as third-party cookies. Third-party cookies may support features such as embedded maps, scheduling tools, and video content.",
     ],
   },
 
   "Cookies We Use": {
     title: "Cookies We Use",
     paragraphs: [
-      "We reviewed our Website to identify exactly what is active today. SST does not currently run any analytics or advertising cookies (such as Google Analytics or a marketing pixel) — the table below reflects only the cookies genuinely set when you use the Website.",
+      "Support Studio Technologies uses only the cookies necessary to support the functionality of the Website and its integrated services.",
     ],
     table: [
       {
         name: "cookie_consent",
-        provider: "Support Studio Technologies (first-party)",
-        purpose:
-          "Remembers whether you accepted or rejected cookies, so the consent banner is not shown again on future visits.",
+        provider: "Support Studio Technologies",
+        purpose: "Stores your cookie preferences to prevent the consent banner from reappearing.",
         duration: "365 days",
       },
       {
-        name: "Google Maps cookies (e.g. NID, CONSENT)",
-        provider: "Google LLC (third-party)",
-        purpose:
-          "Set when the embedded location map on our Contact Us page loads, supporting the map display and Google's own services.",
-        duration: "Set by Google; varies by cookie",
+        name: "Google Maps Cookies",
+        provider: "Google LLC",
+        purpose: "Supports the display and functionality of embedded maps.",
+        duration: "Varies",
       },
       {
-        name: "Calendly session cookies (e.g. __cf_bm)",
-        provider: "Calendly LLC (third-party)",
-        purpose:
-          "Set when you use the embedded scheduling widget on our Book a Call page, to support booking a meeting and protect the widget from abuse.",
-        duration: "Set by Calendly; varies by cookie",
+        name: "Calendly Cookies",
+        provider: "Calendly LLC",
+        purpose: "Enables appointment scheduling and protects the scheduling service.",
+        duration: "Varies",
       },
       {
-        name: "YouTube cookies (e.g. YSC, VISITOR_INFO1_LIVE)",
-        provider: "Google LLC / YouTube (third-party)",
-        purpose:
-          "Set when you play a video embedded in our website, supporting video playback and YouTube's own services.",
-        duration: "Set by YouTube; varies by cookie",
+        name: "YouTube Cookies",
+        provider: "Google LLC / YouTube",
+        purpose: "Supports embedded video playback and related functionality.",
+        duration: "Varies",
       },
     ],
   },
@@ -65,47 +61,38 @@ export const sectionContent = {
   "Third-Party Cookies": {
     title: "Third-Party Cookies",
     paragraphs: [
-      {
-        parts: [
-          "The map, scheduling widget, and video embeds on our Website are provided by third parties, and we do not control the cookies these providers set. For more information, please refer to their respective policies: the ",
-          { text: "Google Privacy Policy", href: "https://policies.google.com/privacy" },
-          " and the ",
-          { text: "Calendly Privacy Notice", href: "https://calendly.com/privacy" },
-          ".",
-        ],
-      },
-      "If you do not wish to receive cookies from these providers, you can avoid loading the relevant embed (for example, by not opening the map, the scheduling widget, or a video) or block third-party cookies through your browser settings.",
+      "Some features of our Website rely on third-party services such as Google Maps, Calendly, and YouTube. These providers may set cookies in accordance with their own privacy and cookie policies. Support Studio Technologies does not control the use of these cookies.",
     ],
   },
 
   "Managing Cookie Preferences": {
     title: "Managing Your Cookie Preferences",
     paragraphs: [
-      "When you first visit our Website, you are shown a cookie banner where you can choose “Accept All” or “Reject All”. Your choice is remembered using the cookie_consent cookie described above, for 365 days.",
-      "You can also control or delete cookies at any time through your browser settings. Most browsers let you refuse or delete cookies, though doing so may affect the availability of certain parts of our Website, such as the interactive map, scheduling widget, or embedded videos.",
+      "When you first visit our Website, you can choose to accept or reject non-essential cookies through the cookie banner. Your preference is stored for up to 365 days using the cookie_consent cookie.",
+      "You may also manage or delete cookies through your browser settings. Please note that disabling certain cookies may affect the functionality of features such as interactive maps, appointment scheduling, and embedded videos.",
     ],
   },
 
   "Changes To This Policy": {
     title: "Changes to This Cookie Policy",
     paragraphs: [
-      "We may update this Cookie Policy from time to time to reflect changes in the cookies we use, or for other operational, legal, or regulatory reasons. Please revisit this page periodically to stay informed about our use of cookies.",
-      "This Cookie Policy was last reviewed and updated on 20 July 2026.",
+      "Support Studio Technologies may update this Cookie Policy periodically to reflect changes in technology, legal requirements, or our use of cookies. The latest version will always be available on our Website.",
     ],
   },
 
   "Contact Us": {
     title: "Contact Us",
     paragraphs: [
-      "If you have any questions about our use of cookies, please contact us:",
+      "If you have any questions about this Cookie Policy or our use of cookies, please contact us:",
     ],
     contacts: [
       { label: "Email", value: "sstdpo@isupportz.com", href: "mailto:sstdpo@isupportz.com" },
-      { label: "Phone", value: "0413-2191301", href: "tel:+04132191301" },
+      { label: "Phone", value: "+91 413 2191301", href: "tel:+914132191301" },
       {
         label: "Registered Address",
-        value: "#192, Kamaraj Salai, Puducherry, India – Pin Code 605013",
-        href: "https://maps.app.goo.gl/pHCzqbb6vXihYvjn6",
+        value:
+          "Support Studio Technologies Pvt Ltd, #192, Kamaraj Salai, New Saram, Puducherry 605013, India.",
+        href: "https://www.google.com/maps/search/?api=1&query=Support+Studio+Technologies+Pvt+Ltd%2C+%23192%2C+Kamaraj+Salai%2C+New+Saram%2C+Puducherry+605013%2C+India",
       },
     ],
   },

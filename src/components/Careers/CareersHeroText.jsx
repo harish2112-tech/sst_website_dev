@@ -14,7 +14,7 @@ export default function CareersHeroText() {
                 <p className="text-white text-base sm:text-3xl shrink-0">Career</p>
             </div>
             <div className="flex-1 h-px bg-white/30" />
-            <h1 className="text-white/90 text-2xl sm:text-4xl font-normal mt-3 max-w-4xl">
+            <h1 className="text-white/90 text-3xl sm:text-5xl lg:text-6xl font-medium mt-3 max-w-4xl">
                 Opportunities don&apos;t happen, you create them.
             </h1>
             <p className="text-white text-xs sm:text-xl mt-3 max-w-xl">

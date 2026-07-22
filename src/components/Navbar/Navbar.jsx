@@ -266,7 +266,7 @@ const Navbar = () => {
                   <li className="relative group">
                     <Link
                       href="/#"
-                      className={`${navLinkClass} flex items-center gap-1 ${pathname === "/services"
+                      className={`${navLinkClass} flex items-center gap-1 ${pathname === "/"
                         ? "text-[#2d8ec5] after:w-full"
                         : isNavbarLight
                           ? "text-black"
@@ -417,8 +417,8 @@ const Navbar = () => {
 
                   <li>
                     <Link
-                      href="/aboutus"
-                      className={`${navLinkClass} ${pathname === "/aboutus"
+                      href="/who-we-are"
+                      className={`${navLinkClass} ${pathname === "/who-we-are"
                         ? "text-[#2d8ec5] after:w-full"
                         : isNavbarLight
                           ? "text-black"
@@ -546,7 +546,7 @@ const Navbar = () => {
                   }`}
               >
                 <Link
-                  href="/services"
+                  href="/"
                   onClick={closeMenu}
                   className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname.startsWith("/services")
                     ? "text-[#2d8ec5]"
@@ -699,8 +699,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/aboutus"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/aboutus"
+                href="/career"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/career"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
@@ -712,8 +712,8 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/aboutus"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/aboutus"
+                href="/who-we-are"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/who-we-are"
                   ? "text-[#2d8ec5] bg-gray-100"
                   : "text-gray-800 hover:text-[#2d8ec5]"
                   }`}
