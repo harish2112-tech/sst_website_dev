@@ -22,7 +22,7 @@ const itemVariants = {
 export default function CleanPrinciples() {
     return (
         <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-            <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mb-16 sm:mb-20" />
+            {/* <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mb-16 sm:mb-20" /> */}
 
             <div className="max-w-[1300px] mx-auto flex flex-col gap-10">
                 <motion.div

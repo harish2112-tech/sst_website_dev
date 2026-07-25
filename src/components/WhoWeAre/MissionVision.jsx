@@ -86,9 +86,8 @@ function AnimatedBorderCard({ title, description }) {
 
             <p className={`${cardFont.className} relative text-4xl font-light text-white`}>{title}</p>
             <p
-                className={`${cardFont.className} relative text-base font-extralight mt-10 leading-relaxed origin-left transition-all ease-in-out ${
-                    isHovered ? "text-white scale-105" : "text-white/50"
-                }`}
+                className={`${cardFont.className} relative text-base font-extralight mt-10 leading-relaxed origin-left transition-all ease-in-out ${isHovered ? "text-white scale-105" : "text-white/50"
+                    }`}
                 style={{ transitionDuration: `${SEGMENT_MS}ms` }}
             >
                 {description}
@@ -100,7 +99,7 @@ function AnimatedBorderCard({ title, description }) {
 export default function MissionVision() {
     return (
         <section className="w-full py-16 sm:py-20">
-            <motion.div
+            {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -112,7 +111,7 @@ export default function MissionVision() {
                     We are passionate about empowering individuals and businesses to take control of their finances
                     and achieve their financial goals.
                 </p>
-            </motion.div>
+            </motion.div> */}
 
             <div className="relative w-full sm:h-[800px]">
                 <Image src={missionBg} alt="" fill className="object-cover" />

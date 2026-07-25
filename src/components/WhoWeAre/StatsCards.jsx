@@ -26,7 +26,7 @@ const itemVariants = {
 
 export default function StatsCards() {
     return (
-        <section className="w-full px-4 sm:px-6 lg:px-[52px] py-12 sm:py-16">
+        <section className="w-full px-4 sm:px-6 lg:px-[52px] py-12 sm:pt-1 sm:pb-16">
             <motion.div
                 variants={containerVariants}
                 initial="hidden"

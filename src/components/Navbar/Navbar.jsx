@@ -123,7 +123,7 @@ const Navbar = () => {
 
       { name: "Experience Design", href: "/services/experienceDesign" },
       { name: "Intelligent Automation", href: "/services/intelligentAutomation" },
-      { name: "Cybersecurity & Digital Trust", href: "/services/Cybersecurity" },
+      { name: "Cybersecurity & Digital Trust", href: "/whatWeDo/cybersecurity-digital-trust" },
       { name: "Managed Services", href: "/services/managedServices" },
       { name: "Business Advisory", href: "/services/businessAdvisory" },
       { name: "Innovation & Emerging Technologies", href: "/services/Innovation" },
@@ -266,7 +266,7 @@ const Navbar = () => {
                   <li className="relative group">
                     <Link
                       href="/#"
-                      className={`${navLinkClass} flex items-center gap-1 ${pathname === "/"
+                      className={`${navLinkClass} flex items-center gap-1 ${pathname === "/services"
                         ? "text-[#2d8ec5] after:w-full"
                         : isNavbarLight
                           ? "text-black"

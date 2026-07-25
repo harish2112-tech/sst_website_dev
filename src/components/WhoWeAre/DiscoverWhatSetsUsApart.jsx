@@ -30,7 +30,8 @@ const CARDS = [
 
 export default function DiscoverWhatSetsUsApart() {
     return (
-        <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <section className="w-full py-16 sm:py-2 px-4 sm:px-6 lg:px-8">
+            <div className="w-full h-px bg-[#c7cbcd] max-w-[1300px] mx-auto mb-16 sm:mb-20" />
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -64,9 +65,8 @@ export default function DiscoverWhatSetsUsApart() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 + index * 0.1 }}
-                            className={`w-full lg:absolute lg:top-[18.24%] lg:h-[63.68%] lg:w-[35.98%] bg-[#f4f3f9] flex flex-col justify-center gap-4 px-6 sm:px-8 py-10 ${
-                                index === 0 ? "lg:left-[24.79%]" : "lg:left-[62.5%]"
-                            }`}
+                            className={`w-full lg:absolute lg:top-[18.24%] lg:h-[63.68%] lg:w-[35.98%] bg-[#f4f3f9] flex flex-col justify-center gap-4 px-6 sm:px-8 py-10 ${index === 0 ? "lg:left-[24.79%]" : "lg:left-[62.5%]"
+                                }`}
                         >
                             <div>
                                 <p className="text-lg text-black">{card.title}</p>
