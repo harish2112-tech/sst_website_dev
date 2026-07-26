@@ -257,7 +257,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#product"
+                  href="/whatWeDo/cybersecurity-and-digital-trust"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Cybersecurity & Digital Trust

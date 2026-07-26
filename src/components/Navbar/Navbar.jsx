@@ -699,19 +699,6 @@ const Navbar = () => {
 
             <li>
               <Link
-                href="/career"
-                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/career"
-                  ? "text-[#2d8ec5] bg-gray-100"
-                  : "text-gray-800 hover:text-[#2d8ec5]"
-                  }`}
-                onClick={closeMenu}
-              >
-                Career
-              </Link>
-            </li>
-
-            <li>
-              <Link
                 href="/who-we-are"
                 className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/who-we-are"
                   ? "text-[#2d8ec5] bg-gray-100"
@@ -733,6 +720,18 @@ const Navbar = () => {
                 onClick={closeMenu}
               >
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/careers"
+                className={`block py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname === "/career"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
+                  }`}
+                onClick={closeMenu}
+              >
+                Careers
               </Link>
             </li>
           </ul>
