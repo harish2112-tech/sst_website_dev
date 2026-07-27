@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section2_Card1.svg";
-import card2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section2_Card2.svg";
-import card3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section2_Card3.svg";
-import card4 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section2_Card4.svg";
+import card1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Card1.jpg";
+import card2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Card2.jpg";
+import card3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Card3.jpg";
+import card4 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Card4.jpg";
 
 const CARDS = [
     { image: card1, title: "Protect critical business systems", desc: "Helping businesses transform with innovative SAP solutions." },
@@ -26,7 +26,7 @@ const itemVariants = {
 
 export default function WhyCybersecurityMatters() {
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[82px] px-6 sm:px-[50px] py-10 sm:py-[40px]">
+        <div className="w-full h-full flex flex-col items-center justify-center gap-10 sm:gap-[82px] px-6 sm:px-[50px] py-10 sm:py-[40px] pb-0">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

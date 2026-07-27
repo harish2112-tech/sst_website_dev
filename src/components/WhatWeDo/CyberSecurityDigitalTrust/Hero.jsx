@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import heroBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Cybersecurity_Hero_Bg.svg";
+// import heroBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Cybersecurity_Hero_Bg.svg";
+import heroBg from "@/assets/Cybersecurity-Digital-Trust.jpg";
 
 export default function Hero() {
     return (

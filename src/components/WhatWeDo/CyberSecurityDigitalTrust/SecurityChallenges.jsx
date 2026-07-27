@@ -19,7 +19,7 @@ const CHALLENGES = [
 
 export default function SecurityChallenges() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[50px]">
+        <section className="w-full pb-10 sm:py-[-55px] px-6 sm:px-[50px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function SecurityChallenges() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:relative lg:w-full max-w-[1181px] mx-auto lg:aspect-[1181/592]">
+            <div className="flex flex-col lg:relative lg:w-full max-w-full mx-auto lg:aspect-[1181/592]">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}

@@ -77,7 +77,7 @@ export default function CloudSecurity() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col gap-6 sm:gap-[30px] w-full max-w-[1161px]">
+            <div className="flex flex-col gap-6 sm:gap-[30px] w-full md:ml-10">
                 <div
                     ref={trackRef}
                     onScroll={updateProgress}

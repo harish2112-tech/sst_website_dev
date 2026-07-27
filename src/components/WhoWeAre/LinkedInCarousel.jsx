@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -19,6 +19,14 @@ const linkedinPosts = [
 
 export default function LinkedInCarousel() {
 
+    const [loaded, setLoaded] = useState({});
+
+    const handleLoad = (index) => {
+        setLoaded((prev) => ({
+            ...prev,
+            [index]: true,
+        }));
+    };
     return (
         <section className="py-16 bg-white">
 
@@ -86,17 +94,25 @@ export default function LinkedInCarousel() {
                     {linkedinPosts.map((post, index) => (
                         <SwiperSlide key={index}>
 
-                            <div className="h-[560px] rounded-sm overflow-hidden">
-
+                            <div className="w-full h-[650px] overflow-hidden rounded-lg">
                                 <iframe
                                     src={post}
-                                    className="w-full h-[650px] -translate-y-1"
+                                    className="w-full h-full"
                                     frameBorder="0"
                                     scrolling="no"
-                                    allowFullScreen
-                                    title={`LinkedIn Post ${index + 1}`}
+                                    onLoad={() => handleLoad(index)}
                                 />
 
+                                {!loaded[index] && (
+                                    <a
+                                        href={post.replace("/embed/feed/update/", "/feed/update/")}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="absolute inset-0 flex items-center justify-center bg-gray-100"
+                                    >
+                                        View on LinkedIn
+                                    </a>
+                                )}
                             </div>
 
                         </SwiperSlide>

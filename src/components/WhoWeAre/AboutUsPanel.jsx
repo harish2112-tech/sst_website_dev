@@ -17,7 +17,7 @@ export default function AboutUsPanel() {
                 <h2 className="text-xl sm:text-4xl font-medium text-black">About Us</h2>
                 <p className="mt-3 text-sm sm:text-xl font-thin text-[#3d3d4e] leading-relaxed">
                     We are passionate about empowering individuals and businesses to take control of their finances
-                    and achieve their financial goals.At TCS, we believe that the future of technology is shaped by
+                    and achieve their financial goals.At SST, we believe that the future of technology is shaped by
                     people. As we move towards becoming the world&apos;s largest AI‑led technology services, we
                     foster a culture built on long‑term trust, collective growth, and purposeful innovation—where
                     individuals are empowered to learn continuously, collaborate globally, and create meaningful

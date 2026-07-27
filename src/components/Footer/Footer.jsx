@@ -94,7 +94,7 @@ const Footer = () => {
                     href="/careers"
                     className="hover:text-white transition-colors duration-200"
                   >
-                    Career
+                    Careers
                   </Link>
                 </li>
                 {/* <li>
@@ -180,7 +180,7 @@ const Footer = () => {
           </div>
 
 
-          {/* Capabilities */}
+          {/* Capabilities column 1 */}
           <div className="md:col-span-1">
             <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Capabilities</h3>
             <ul className="space-y-2">
@@ -218,7 +218,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/digitalEngineering"
+                  href="/whatWeDo/digital-engineering"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Digital Engineering
@@ -235,13 +235,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Industries */}
+          {/* Capabilities column 2 */}
           <div className="md:col-span-1">
             {/* <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h3> */}
             <ul className="space-y-2 md:mt-32.5">
               <li>
                 <Link
-                  href="/services/sapService/rise-with-sap"
+                  href="/whatWeDo/experience-design"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Experience Design
@@ -249,7 +249,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/enterpriseTransformation"
+                  href="/services/intelligentAutomation"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Intelligent Automation
@@ -265,7 +265,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#experience"
+                  href="/services/managedServices"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Managed Services
@@ -273,7 +273,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#experience"
+                  href="/services/businessAdvisory"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Business Advisory
@@ -281,7 +281,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#experience"
+                  href="/services/Innovation"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Innovation & Emerging Technologies
@@ -290,7 +290,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* <div className="md:col-span-1">
+          {/* Industries */}
+          <div className="md:col-span-1">
             <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">Industries</h3>
             <ul className="space-y-2">
               <li>
@@ -298,7 +299,7 @@ const Footer = () => {
                   href="/services/sapService/rise-with-sap"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  SAP Services
+                  Manufacturing
                 </Link>
               </li>
               <li>
@@ -306,7 +307,7 @@ const Footer = () => {
                   href="/services/enterpriseTransformation"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Digital Transformation
+                  Construction & EPC
                 </Link>
               </li>
               <li>
@@ -314,7 +315,7 @@ const Footer = () => {
                   href="#product"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Product and Development
+                  Oil & Gas
                 </Link>
               </li>
               <li>
@@ -322,11 +323,59 @@ const Footer = () => {
                   href="#experience"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Design and Development
+                  Retail
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#experience"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Healthcare
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#experience"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Logistics
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#experience"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Government
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#experience"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Utilities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#experience"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Financial Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#experience"
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  Real Estate
                 </Link>
               </li>
             </ul>
-          </div> */}
+          </div>
 
           {/* Support */}
           <div className="md:col-span-1 ">
@@ -376,7 +425,7 @@ const Footer = () => {
           </div>
 
           {/* Get In Touch */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <h3 className="text-white text-lg font-semibold md:mt-21.5 mb-4">
               Get In Touch
             </h3>
@@ -425,13 +474,86 @@ const Footer = () => {
                 <MdOutlineMailOutline className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white text-lg" />
               </div>
             </div> */}
+            <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2 mt-4">
+              <a
+                href="https://www.linkedin.com/company/supportstudiotechnologies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
+                aria-label="LinkedIn"
+              >
+                <Image
+                  src={LinkedinIcon}
+                  alt="LinkedIn"
+                  className="w-10 h-10"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
+                aria-label="Instagram"
+              >
+                <Image
+                  src={InstagramIcon}
+                  alt="Instagram"
+                  className="w-10 h-10"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </div>
           </div>
+
         </div>
 
 
         <div className="grid grid-cols-1 md:grid-cols-6  md:gap-16  ">
-          <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2">
-            <a
+
+          <div className="md:col-span-2 ">
+            <div className="space-x-3 md:col-span-1">
+              <p className="text-sm text-white mb-4 md:mb-0">
+                <a
+                  href="/termsOfService"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Terms & Conditions
+                </a>
+                {" | "}
+                <a
+                  href="/privacyPolicy"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Privacy Policy
+                </a>
+                <br />
+                <a
+                  href="/securityPrivacyPolicy"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Security Policy
+                </a>
+                {" | "}
+                <a
+                  href="/cookiePolicy"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Cookie Policy
+                </a>
+              </p>
+            </div>
+            <p className="text-sm text-white flex items-center min-h-[50px]">
+              © 2026 Support Studio Technologies. All Rights Reserved.
+            </p>
+          </div>
+
+
+
+
+          {/* <a
               href="https://www.linkedin.com/company/supportstudiotechnologies/"
               target="_blank"
               rel="noopener noreferrer"
@@ -460,8 +582,8 @@ const Footer = () => {
                 width={24}
                 height={24}
               />
-            </a>
-            {/* <a
+            </a> */}
+          {/* <a
               href="https://calendly.com/supportstudio"
               target="_blank"
               rel="noopener noreferrer"
@@ -476,7 +598,6 @@ const Footer = () => {
                 height={24}
               />
             </a> */}
-          </div>
 
           <div className="flex space-x-3 md:col-span-1">
             {/* <a
@@ -526,8 +647,39 @@ const Footer = () => {
           <div className="md:col-span-1"></div>
 
           <div className="md:col-span-1"></div>
-
-          <div className="md:col-span-2 ">
+          {/* <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2">
+            <a
+              href="https://www.linkedin.com/company/supportstudiotechnologies/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
+              aria-label="LinkedIn"
+            >
+              <Image
+                src={LinkedinIcon}
+                alt="LinkedIn"
+                className="w-10 h-10"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/isupportz.official?igsh=MWF5Z3M2MXFrbXI3cg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
+              aria-label="Instagram"
+            >
+              <Image
+                src={InstagramIcon}
+                alt="Instagram"
+                className="w-10 h-10"
+                width={24}
+                height={24}
+              />
+            </a>
+          </div> */}
+          {/* <div className="md:col-span-2 ">
             <div className="space-x-3 md:col-span-1">
               <p className="text-sm text-white mb-4 md:mb-0">
                 <a
@@ -562,7 +714,7 @@ const Footer = () => {
             <p className="text-sm text-white flex items-center min-h-[50px]">
               © 2026 Support Studio Technologies. All Rights Reserved.
             </p>
-          </div>
+          </div> */}
         </div>
       </footer >
     </>

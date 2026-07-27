@@ -71,8 +71,8 @@ export default function SecurityOperations() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row items-stretch lg:items-end w-full gap-8 lg:gap-0">
-                <div className="flex flex-col w-full lg:w-[405px] shrink-0">
+            <div className="flex flex-col lg:flex-row items-stretch lg:items-end w-full md:pl-5 gap-8 lg:gap-0">
+                <div className="flex flex-col w-full lg:w-[405px] lg:h-[650px] justify-start lg:justify-between shrink-0">
                     {TABS.map((tab, index) => {
                         const isActive = activeIndex === index;
                         return (
@@ -91,11 +91,11 @@ export default function SecurityOperations() {
                     })}
                 </div>
 
-                <div className="relative w-full lg:w-[825px] aspect-[825/587] shrink-0 overflow-hidden">
-                    <Image src={sectionImage} alt="" fill className="object-cover" />
+                <div className="relative flex-1 h-full min-w-0 aspect-[825/527] overflow-hidden">
+                    <Image src={sectionImage} alt="" fill className="md:ml-15 object-cover" />
 
-                    <div className="absolute inset-0 flex items-center justify-center lg:justify-end px-4 sm:px-8 lg:px-0">
-                        <div className="relative w-full sm:w-[571px] lg:w-[571px] lg:mr-[-40px] bg-white p-6 sm:p-10 min-h-[240px] sm:min-h-[300px] flex items-center">
+                    <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 lg:px-0 lg:block">
+                        <div className="relative w-full sm:w-[571px] bg-white p-6 sm:p-10 min-h-[240px] sm:min-h-[300px] flex items-center lg:absolute lg:right-[40px] lg:bottom-[0px] lg:w-[680px] lg:h-[460px] lg:min-h-0">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={activeIndex}
@@ -105,8 +105,8 @@ export default function SecurityOperations() {
                                     transition={{ duration: 0.4, ease: "easeOut" }}
                                     className="flex flex-col gap-4 sm:gap-5"
                                 >
-                                    <h3 className="text-black text-xl sm:text-2xl font-medium">{TABS[activeIndex].title}</h3>
-                                    <p className="text-[#3d3d4e] text-sm sm:text-lg font-light leading-relaxed">
+                                    <h3 className="text-black text-2xl sm:text-[32px] font-medium">{TABS[activeIndex].title}</h3>
+                                    <p className="text-[#3d3d4e] text-base sm:text-xl font-light leading-relaxed">
                                         {TABS[activeIndex].desc}
                                     </p>
                                 </motion.div>

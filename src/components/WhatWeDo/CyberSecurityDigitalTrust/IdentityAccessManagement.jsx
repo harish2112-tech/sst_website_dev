@@ -55,7 +55,7 @@ export default function IdentityAccessManagement() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col items-center gap-5 max-w-[954px] text-center"
+                className="flex flex-col items-center gap-5 max-w-[990px] text-center"
             >
                 <h2 className="text-black text-2xl font-medium">Identity &amp; Access Management</h2>
                 <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
@@ -69,7 +69,7 @@ export default function IdentityAccessManagement() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col items-start w-full max-w-[1137px]">
+            <div className="flex flex-col items-start w-full md:px-5 max-w-full">
                 {ITEMS.map((item, index) => {
                     const isOpen = openIndex === index;
                     return (
@@ -77,7 +77,7 @@ export default function IdentityAccessManagement() {
                             <button
                                 type="button"
                                 onClick={() => handleClick(index)}
-                                className="flex w-full items-center justify-between py-4 sm:py-[14.5px] text-left"
+                                className="flex w-full items-center justify-between py-5 sm:py-6 lg:py-[26px] text-left"
                                 aria-expanded={isOpen}
                             >
                                 <span className="text-[#6c6c6c] text-lg sm:text-2xl lg:text-[28px] font-light">
@@ -104,7 +104,7 @@ export default function IdentityAccessManagement() {
                                         transition={{ duration: 0.35, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <p className="pb-5 sm:pb-6 pr-10 sm:pr-16 text-[#6c6c6c] text-sm sm:text-base font-light leading-relaxed">
+                                        <p className="pb-5 sm:pb-6 pr-10 sm:pr-16 text-[#6C6C6C] text-base sm:text-[18px] font-normal leading-[150%] tracking-[0]">
                                             {item.desc}
                                         </p>
                                     </motion.div>

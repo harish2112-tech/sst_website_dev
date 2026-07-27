@@ -118,10 +118,10 @@ const Navbar = () => {
       { name: "Artificial Intelligence", href: "/services/artificialIntelligence" },
       { name: "Cloud & Infrastructure", href: "/services/cloudInfrastructure" },
       { name: "Data & Intelligence", href: "/services/dataIntelligence" },
-      { name: "Digital Engineering", href: "/services/digitalEngineering" },
+      { name: "Digital Engineering", href: "/whatWeDo/digital-engineering" },
       { name: "Customer Experience", href: "/services/CustomerExperience" },
 
-      { name: "Experience Design", href: "/services/experienceDesign" },
+      { name: "Experience Design", href: "/whatWeDo/experience-design" },
       { name: "Intelligent Automation", href: "/services/intelligentAutomation" },
       { name: "Cybersecurity & Digital Trust", href: "/whatWeDo/cybersecurity-digital-trust" },
       { name: "Managed Services", href: "/services/managedServices" },
@@ -129,21 +129,19 @@ const Navbar = () => {
       { name: "Innovation & Emerging Technologies", href: "/services/Innovation" },
     ],
 
-    // industries: [
-    //   { name: "Manufacturing", href: "/services" },
-    //   { name: "Oil & Gas", href: "/services" },
-    //   { name: "Retail & Consumer Goods", href: "/services" },
-    //   { name: "Automotive", href: "/services" },
-    //   { name: "Utilities", href: "/services" },
-    //   { name: "Healthcare & Life Sciences", href: "/services" },
+    industries: [
+      { name: "Manufacturing", href: "/services" },
+      { name: "Construction & EPC", href: "/services" },
+      { name: "Oil & Gas", href: "/services" },
+      { name: "Retail", href: "/services" },
+      { name: "Healthcare", href: "/services" },
+      { name: "Logistics", href: "/services" },
 
-    //   { name: "Banking & Financial Services", href: "/services" },
-    //   { name: "Construction & Engineering", href: "/services" },
-    //   { name: "Mining & Metals", href: "/services" },
-    //   { name: "Logistics & Transportation", href: "/services" },
-    //   { name: "Public Sector & Government", href: "/services" },
-    //   { name: "Chemicals", href: "/services" },
-    // ],
+      { name: "Government", href: "/services" },
+      { name: "Utilities", href: "/services" },
+      { name: "Financial Services", href: "/services" },
+      { name: "Real Estate", href: "/services" },
+    ],
   };
 
   const capabilityColumns = [
@@ -151,10 +149,10 @@ const Navbar = () => {
     servicesMenu.capabilities.slice(6),
   ];
 
-  // const industryColumns = [
-  //   servicesMenu.industries.slice(0, 6),
-  //   servicesMenu.industries.slice(6),
-  // ];
+  const industryColumns = [
+    servicesMenu.industries.slice(0, 6),
+    servicesMenu.industries.slice(6),
+  ];
 
   return (
     <>
@@ -311,13 +309,13 @@ const Navbar = () => {
                         //   ? "bg-white/80 border-gray-200/30 text-gray-800"
                         //   : "bg-neutral-900/80 border-white/20 text-white"
                         //   }`}
-                        className={`rounded-3xl shadow-2xl min-w-[750px] p-8 pl-20 border transition-colors duration-500 backdrop-blur-md ${isNavbarLight
+                        className={`rounded-3xl shadow-2xl min-w-[990px] p-8 pl-20 border transition-colors duration-500 backdrop-blur-md ${isNavbarLight
                           ? "bg-white/80 border-gray-200/30 text-gray-800"
                           : "bg-neutral-900/80 border-white/20 text-white"
                           }`}
                       >
-                        {/* <div className="grid grid-cols-4 gap-10"> */}
-                        <div className="grid grid-cols-2 gap-10">
+                        <div className="grid grid-cols-4 gap-10">
+                          {/* <div className="grid grid-cols-2 gap-10"> */}
 
                           {/* Capability Column 1 */}
                           <div>
@@ -365,7 +363,7 @@ const Navbar = () => {
                           </div>
 
                           {/* Industry Column 1 */}
-                          {/* <div>
+                          <div>
                             <h3
                               className={`text-sm font-semibold uppercase tracking-wider mb-5 ${isNavbarLight ? "text-black" : "text-white"
                                 }`}
@@ -388,10 +386,10 @@ const Navbar = () => {
                                 </li>
                               ))}
                             </ul>
-                          </div> */}
+                          </div>
 
                           {/* Industry Column 2 */}
-                          {/* <div className="pt-9">
+                          <div className="pt-9">
                             <ul className="space-y-2">
                               {industryColumns[1].map((item) => (
                                 <li key={item.name}>
@@ -407,7 +405,7 @@ const Navbar = () => {
                                 </li>
                               ))}
                             </ul>
-                          </div> */}
+                          </div>
 
                         </div>
                       </div>

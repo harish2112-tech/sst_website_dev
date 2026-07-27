@@ -61,7 +61,7 @@ export default function CybersecurityDeliveryFramework() {
     const progress = maxIndex > 0 ? index / maxIndex : 0;
 
     return (
-        <section className="bg-black w-full py-12 sm:py-16 lg:py-0 px-6 sm:px-[65px]">
+        <section className="bg-white w-full py-12 sm:py-16 lg:py-0 px-6 sm:px-[65px]">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-[91px] items-center lg:items-center w-full lg:py-16">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -70,8 +70,8 @@ export default function CybersecurityDeliveryFramework() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-6 w-full lg:w-[424px] shrink-0"
                 >
-                    <h2 className="text-white text-2xl sm:text-[32px] font-medium">Cybersecurity Delivery Framework</h2>
-                    <p className="text-[#a4a7a5] text-base sm:text-lg font-light">
+                    <h2 className="text-black text-2xl sm:text-[32px] font-medium">Cybersecurity Delivery Framework</h2>
+                    <p className="text-[#3d3d4e] text-base sm:text-lg font-light">
                         Effective cybersecurity is achieved through a structured lifecycle that integrates governance, technology,
                         operations, and continuous improvement.
                     </p>
@@ -83,7 +83,7 @@ export default function CybersecurityDeliveryFramework() {
                             type="button"
                             aria-label="Scroll up"
                             onClick={() => goTo(index - 1)}
-                            className="absolute -top-10 left-1/2 -translate-x-1/2 text-white/70 hover:text-white text-lg"
+                            className="absolute -top-10 left-1/2 -translate-x-1/2 text-[#6c6c6c] hover:text-black text-lg transition-colors"
                         >
                             ↑
                         </button>
@@ -96,7 +96,7 @@ export default function CybersecurityDeliveryFramework() {
                             type="button"
                             aria-label="Scroll down"
                             onClick={() => goTo(index + 1)}
-                            className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-white/70 hover:text-white text-lg"
+                            className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[#6c6c6c] hover:text-black text-lg transition-colors"
                         >
                             ↓
                         </button>
@@ -104,7 +104,7 @@ export default function CybersecurityDeliveryFramework() {
                 </div>
 
                 <div
-                    className="relative w-full lg:w-[515px] shrink-0 overflow-hidden"
+                    className="relative  w-full lg:w-[715px] shrink-0 overflow-hidden"
                     style={{ height: VISIBLE_COUNT * CARD_HEIGHT + (VISIBLE_COUNT - 1) * CARD_GAP }}
                 >
                     <motion.div
@@ -113,12 +113,12 @@ export default function CybersecurityDeliveryFramework() {
                         className="absolute inset-x-0 top-0 flex flex-col gap-[34px]"
                     >
                         {CARDS.map((card, i) => (
-                            <div key={`${card.title}-${i}`} className="relative w-full shrink-0 overflow-hidden" style={{ height: CARD_HEIGHT }}>
-                                <Image src={card.image} alt="" fill className="object-cover" />
-                                <div className="absolute inset-0 bg-black/50" />
+                            <div key={`${card.title}-${i}`} className="relative  w-full shrink-0 overflow-hidden" style={{ height: CARD_HEIGHT }}>
+                                {/* <Image src={card.image} alt="" fill className="object-cover " /> */}
+                                <div className="absolute inset-0 border border-black " />
                                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center gap-5 px-8">
-                                    <p className="text-white text-2xl sm:text-[28px] font-normal">{card.title}</p>
-                                    <p className="text-[#a4a7a5] text-base sm:text-lg font-light max-w-[389px]">{card.desc}</p>
+                                    <p className="text-black text-2xl sm:text-[28px] font-normal">{card.title}</p>
+                                    <p className="text-[#3d3d4e] text-base sm:text-lg font-light max-w-[389px]">{card.desc}</p>
                                 </div>
                             </div>
                         ))}

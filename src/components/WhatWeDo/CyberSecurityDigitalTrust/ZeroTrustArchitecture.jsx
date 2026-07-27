@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import zeroTrustBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section10_Bg.svg";
+import zeroTrustBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Zero-Trust-Architecture.jpg";
 
 const SLIDES = [
     {
@@ -65,64 +65,63 @@ export default function ZeroTrustArchitecture() {
     const goTo = (next) => setIndex((next + SLIDES.length) % SLIDES.length);
 
     return (
-        <section className="relative w-full aspect-[1280/633] overflow-hidden">
-            <Image src={zeroTrustBg} alt="" fill className="object-cover" />
+        <section
+            className="w-full bg-cover bg-center bg-no-repeat py-10 sm:py-16 lg:py-[71px] px-6 sm:px-10 lg:px-[50px] flex flex-col items-start"
+            style={{ backgroundImage: `url(${zeroTrustBg.src})` }}
+        >
+            <div className="w-full lg:max-w-[664px] flex flex-col gap-3 sm:gap-[14px]">
+                <h2 className="text-black text-xl sm:text-2xl lg:text-[32px] font-normal">Zero Trust Architecture</h2>
 
-            <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-10 lg:px-0">
-                <div className="w-full lg:w-[52.3%] lg:ml-[36.6%] flex flex-col gap-3 sm:gap-[14px]">
-                    <h2 className="text-white text-xl sm:text-2xl lg:text-[32px] font-normal">Zero Trust Architecture</h2>
-
-                    <div className="bg-[#252f35] w-full px-6 sm:px-8 lg:px-[53px] py-8 sm:py-10 min-h-[260px] sm:min-h-[300px] flex items-center">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.6, ease: "easeInOut" }}
-                                className="flex flex-col gap-4 sm:gap-[34px] text-white w-full"
-                            >
-                                <p className="text-xl sm:text-2xl lg:text-[32px] font-normal">{SLIDES[index].title}</p>
-                                <div className="text-sm sm:text-lg font-thin space-y-3">
-                                    {SLIDES[index].desc.map((p) => (
-                                        <p key={p}>{p}</p>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
-
-                    <div className="flex justify-center">
-                        <div className="bg-[#141c22] rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2">
-                            <button
-                                type="button"
-                                aria-label="Previous"
-                                onClick={() => goTo(index - 1)}
-                                className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-white text-white shrink-0"
-                            >
-                                ←
-                            </button>
-                            <div className="flex items-center gap-[10px]">
-                                {SLIDES.map((_, dotIndex) => (
-                                    <button
-                                        key={dotIndex}
-                                        type="button"
-                                        aria-label={`Go to slide ${dotIndex + 1}`}
-                                        onClick={() => goTo(dotIndex)}
-                                        className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-white"
-                                            }`}
-                                    />
+                <div className="bg-[#f4f3f9] border border-[#d9d9d9] shadow-lg w-full px-6 sm:px-8 lg:px-[53px] py-8 sm:py-10 min-h-[260px] sm:min-h-[300px] flex items-center">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                            className="flex flex-col gap-4 sm:gap-[34px] w-full"
+                        >
+                            <p className="text-black text-xl sm:text-2xl lg:text-[32px] font-normal">{SLIDES[index].title}</p>
+                            <div className="text-[#3d3d4e] text-sm sm:text-lg font-light space-y-3">
+                                {SLIDES[index].desc.map((p) => (
+                                    <p key={p}>{p}</p>
                                 ))}
                             </div>
-                            <button
-                                type="button"
-                                aria-label="Next"
-                                onClick={() => goTo(index + 1)}
-                                className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-white text-white shrink-0"
-                            >
-                                →
-                            </button>
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                <div className="flex items-center md:mt-[-50px] md:ml-[400px]">
+                    <div className="bg-[#141C22] border border-[#141C22] rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2">
+                        <button
+                            type="button"
+                            aria-label="Previous"
+                            onClick={() => goTo(index - 1)}
+                            className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-white text-white hover:bg-white hover:text-black hover:border-black transition-colors shrink-0"
+                        >
+                            ←
+                        </button>
+                        <div className="flex items-center gap-[10px]">
+                            {SLIDES.map((_, dotIndex) => (
+                                <button
+                                    key={dotIndex}
+                                    type="button"
+                                    aria-label={`Go to slide ${dotIndex + 1}`}
+                                    onClick={() => goTo(dotIndex)}
+                                    className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-white"
+                                        }`}
+                                />
+                            ))}
                         </div>
+                        <button
+                            type="button"
+                            aria-label="Next"
+                            onClick={() => goTo(index + 1)}
+                            className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-white text-white hover:bg-white hover:text-black hover:border-black transition-colors shrink-0"
+                        >
+                            →
+                        </button>
                     </div>
                 </div>
             </div>
