@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import bannerBg from "@/assets/WhatWeDo/Artificial Intelligence/Section7_IntelligentAssistants_BG.svg";
+import bannerBg from "@/assets/WhatWeDo/Artificial Intelligence/Section7_IntelligentAssistants_Bg.svg";
 
 export default function IntelligentAssistantsBanner() {
     return (
