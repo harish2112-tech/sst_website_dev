@@ -60,7 +60,7 @@ export default function MobileApplications() {
                 </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[18px] max-w-[1180px] mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[18px] max-w-[1390px] mx-auto">
                 {CARDS.map((card, index) => (
                     <motion.div
                         key={card.title}

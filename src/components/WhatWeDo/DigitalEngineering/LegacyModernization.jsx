@@ -45,7 +45,7 @@ export default function LegacyModernization() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative z-10 -mt-16 sm:-mt-35 mb-8 sm:mb-16 mx-4 sm:mx-auto sm:max-w-[1300px] bg-white shadow-[0px_4px_28.65px_rgba(0,0,0,0.25)] px-4 sm:px-8 py-8 sm:py-20"
+                className="relative z-10 -mt-16 sm:-mt-35 mb-8 sm:mb-16 mx-4 sm:mx-auto sm:max-w-[1390px] bg-white shadow-[0px_4px_28.65px_rgba(0,0,0,0.25)]  py-8 sm:py-20"
             >
                 <div className="hidden sm:flex items-center justify-between">
                     {ITEMS.map((item, i) => (

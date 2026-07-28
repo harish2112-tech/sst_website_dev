@@ -81,93 +81,175 @@ export default function DesignSystems() {
                 </p>
             </motion.div>
 
-            <div className="relative w-full max-w-[1280px] mx-auto">
-                <div className="relative w-full aspect-[1314/592] min-h-[420px] overflow-hidden">
-                    <Image src={bgPhoto} alt="" fill className="object-cover" />
+            <div className="max-w-[1300px] mx-auto flex flex-col lg:relative lg:w-full lg:aspect-[1220/592]">
 
-                    <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-0">
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-[21px] w-full min-w-0 sm:w-auto">
-                            <div className="relative bg-[#0a2b3e] w-full min-w-0 sm:w-[439px] h-[340px] sm:h-[377px] overflow-hidden">
-                                <AnimatePresence mode="wait" custom={direction}>
-                                    <motion.div
-                                        key={index}
-                                        custom={direction}
-                                        variants={slideVariants}
-                                        initial="enter"
-                                        animate="center"
-                                        exit="exit"
-                                        transition={{ duration: 0.5, ease: "easeInOut" }}
-                                        className="absolute inset-0 flex flex-col justify-between px-6 sm:px-[27px] py-8 sm:py-[48px]"
-                                    >
-                                        <p className="text-white text-lg font-light">{left.tag}</p>
-                                        <p className="text-white text-2xl font-medium">{left.title}</p>
-                                        <p className="text-[#c9c9c9] text-sm sm:text-base font-light leading-relaxed">{left.desc}</p>
-                                    </motion.div>
-                                </AnimatePresence>
-                            </div>
+                {/* Left Image */}
+                <motion.div
+                    initial={{ opacity: 0, x: -24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative w-full h-[320px] sm:h-[420px]
+                   lg:absolute lg:left-0 lg:top-0
+                   lg:h-full lg:w-[49%]"
+                >
+                    <Image
+                        src={bgPhoto}
+                        alt=""
+                        fill
+                        className="object-cover"
+                    />
+                </motion.div>
 
-                            <div className="hidden sm:block relative bg-[#f1f1f1] w-full sm:w-[439px] h-[377px] overflow-hidden">
-                                <AnimatePresence mode="wait" custom={direction}>
-                                    <motion.div
-                                        key={index}
-                                        custom={direction}
-                                        variants={slideVariants}
-                                        initial="enter"
-                                        animate="center"
-                                        exit="exit"
-                                        transition={{ duration: 0.5, ease: "easeInOut" }}
-                                        className="absolute inset-0 flex flex-col justify-between px-[27px] py-[48px]"
-                                    >
-                                        <p className="text-black text-lg font-light">{right.tag}</p>
-                                        <p className="text-black text-2xl font-medium">{right.title}</p>
-                                        <p className="text-[#6c6c6c] text-base font-light leading-relaxed">{right.desc}</p>
-                                    </motion.div>
-                                </AnimatePresence>
-                            </div>
-                        </div>
-                    </div>
+                {/* Cards */}
+                <div className="flex flex-col lg:contents">
+
+                    {/* Blue Card */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 24 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="relative bg-[#0A2B3E]
+                       w-full mt-6
+                       lg:absolute
+                       lg:left-[25%]
+                       lg:top-[17%]
+                       lg:w-[36%]
+                       lg:h-[64%]
+                       px-8 py-10"
+                    >
+                        <AnimatePresence mode="wait" custom={direction}>
+                            <motion.div
+                                key={index}
+                                custom={direction}
+                                variants={slideVariants}
+                                initial="enter"
+                                animate="center"
+                                exit="exit"
+                                transition={{ duration: 0.45 }}
+                                className="flex flex-col justify-between h-full"
+                            >
+                                <div>
+                                    <p className="text-lg text-white font-light">
+                                        {left.tag}
+                                    </p>
+
+                                    <h3 className="text-3xl font-medium text-white mt-6">
+                                        {left.title}
+                                    </h3>
+                                </div>
+
+                                <p className="text-[#d4d4d4] leading-8 text-base">
+                                    {left.desc}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+                    </motion.div>
+
+                    {/* Grey Card */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: .1 }}
+                        className="relative bg-[#F4F4F4]
+                       w-full mt-5
+                       lg:absolute
+                       lg:left-[62%]
+                       lg:top-[17%]
+                       lg:w-[36%]
+                       lg:h-[64%]
+                       px-8 py-10"
+                    >
+                        <AnimatePresence mode="wait" custom={direction}>
+                            <motion.div
+                                key={`right-${index}`}
+                                custom={direction}
+                                variants={slideVariants}
+                                initial="enter"
+                                animate="center"
+                                exit="exit"
+                                transition={{ duration: 0.45 }}
+                                className="flex flex-col justify-between h-full"
+                            >
+                                <div>
+                                    <p className="text-lg text-black font-light">
+                                        {right.tag}
+                                    </p>
+
+                                    <h3 className="text-3xl font-medium text-black mt-6">
+                                        {right.title}
+                                    </h3>
+                                </div>
+
+                                <p className="text-[#666] leading-8 text-base">
+                                    {right.desc}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+                    </motion.div>
+
                 </div>
 
-                <div className="flex justify-center sm:justify-end mt-6">
-                    <div className="bg-[#f1f1f1] rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2">
-                        <button
-                            type="button"
-                            aria-label="Previous"
-                            onClick={() => goTo(index - 1, -1)}
-                            disabled={index === 0}
-                            className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full shrink-0 transition-transform hover:scale-110 ${
-                                index === 0 ? "text-[#a4a7a5]" : "text-black"
+            </div>
+
+
+            <div className="flex justify-center md:justify-end md:-mt-8">
+                <div className="bg-[#141C22] border border-[#141C22] rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2">
+
+                    {/* Previous */}
+                    <button
+                        type="button"
+                        aria-label="Previous"
+                        onClick={() => goTo(index - 1, -1)}
+                        disabled={index === 0}
+                        className={`flex items-center justify-center size-[26px] sm:size-[31px]
+                rounded-full border transition-all duration-300 shrink-0
+                ${index === 0
+                                ? "border-[#666] text-[#666] cursor-not-allowed"
+                                : "border-white text-white hover:bg-white hover:text-black hover:border-black"
                             }`}
-                        >
-                            <ArrowIcon className="size-full -rotate-90" />
-                        </button>
-                        <div className="flex items-center gap-[10px]">
-                            {ITEMS.map((_, dotIndex) => (
-                                <button
-                                    key={dotIndex}
-                                    type="button"
-                                    aria-label={`Go to slide ${dotIndex + 1}`}
-                                    onClick={() => goTo(Math.min(dotIndex, maxIndex), dotIndex > index ? 1 : -1)}
-                                    className={`size-[8px] rounded-full border-[0.5px] transition-colors ${
-                                        dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
+                    >
+                        ←
+                    </button>
+
+                    {/* Dots */}
+                    <div className="flex items-center gap-[10px]">
+                        {ITEMS.slice(0, maxIndex + 1).map((_, dotIndex) => (
+                            <button
+                                key={dotIndex}
+                                type="button"
+                                aria-label={`Go to slide ${dotIndex + 1}`}
+                                onClick={() =>
+                                    goTo(dotIndex, dotIndex > index ? 1 : -1)
+                                }
+                                className={`size-[8px] rounded-full border transition-colors duration-300 ${dotIndex === index
+                                    ? "bg-[#2D8EC5] border-[#2D8EC5]"
+                                    : "border-white"
                                     }`}
-                                />
-                            ))}
-                        </div>
-                        <button
-                            type="button"
-                            aria-label="Next"
-                            onClick={() => goTo(index + 1, 1)}
-                            disabled={index === maxIndex}
-                            className={`flex items-center justify-center size-[26px] sm:size-[31px] rounded-full shrink-0 transition-transform hover:scale-110 ${
-                                index === maxIndex ? "text-[#a4a7a5]" : "text-black"
-                            }`}
-                        >
-                            <ArrowIcon className="size-full rotate-90" />
-                        </button>
+                            />
+                        ))}
                     </div>
+
+                    {/* Next */}
+                    <button
+                        type="button"
+                        aria-label="Next"
+                        onClick={() => goTo(index + 1, 1)}
+                        disabled={index === maxIndex}
+                        className={`flex items-center justify-center size-[26px] sm:size-[31px]
+                rounded-full border transition-all duration-300 shrink-0
+                ${index === maxIndex
+                                ? "border-[#666] text-[#666] cursor-not-allowed"
+                                : "border-white text-white hover:bg-white hover:text-black hover:border-black"
+                            }`}
+                    >
+                        →
+                    </button>
                 </div>
             </div>
-        </section>
+
+        </section >
     );
 }

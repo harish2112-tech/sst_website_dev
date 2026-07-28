@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import java from "@/assets/WhatWeDo/Experience Design/icons/java.png";
-import mongodb from "@/assets/WhatWeDo/Experience Design/icons/mongodb.png";
-import nodejs from "@/assets/WhatWeDo/Experience Design/icons/nodejs.png";
-import postgresql from "@/assets/WhatWeDo/Experience Design/icons/postgresql.png";
-import python from "@/assets/WhatWeDo/Experience Design/icons/python.png";
-import react from "@/assets/WhatWeDo/Experience Design/icons/react.png";
-
+import java from "@/assets/WhatWeDo/Artificial Intelligence/icons/java.png";
+import mongodb from "@/assets/WhatWeDo/Artificial Intelligence/icons/mongodb.png";
+import nodejs from "@/assets/WhatWeDo/Artificial Intelligence/icons/nodejs.png";
+import postgresql from "@/assets/WhatWeDo/Artificial Intelligence/icons/postgresql.png";
+import python from "@/assets/WhatWeDo/Artificial Intelligence/icons/python.png";
+import react from "@/assets/WhatWeDo/Artificial Intelligence/icons/react.png";
+ 
 const LOGOS = [
     { name: "Java", src: java, width: 87 },
     { name: "MongoDB", src: mongodb, width: 150 },
@@ -17,10 +17,10 @@ const LOGOS = [
     { name: "Python", src: python, width: 114 },
     { name: "React", src: react, width: 117 },
 ];
-
+ 
 export default function DesignToolsTechnologies() {
     const marqueeLogos = [...LOGOS, ...LOGOS];
-
+ 
     return (
         <section className="w-full py-10 sm:py-16 px-6">
             <motion.h2
@@ -32,7 +32,7 @@ export default function DesignToolsTechnologies() {
             >
                 Design Tools &amp; Technologies
             </motion.h2>
-
+ 
             <div className="max-w-[1180px] mx-auto overflow-hidden">
                 <motion.div
                     className="flex w-max items-center gap-8 sm:gap-12"
@@ -62,3 +62,4 @@ export default function DesignToolsTechnologies() {
         </section>
     );
 }
+ 

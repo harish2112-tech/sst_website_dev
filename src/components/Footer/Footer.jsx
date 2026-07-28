@@ -194,7 +194,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/artificialIntelligence"
+                  href="/whatWeDo/artificial-intelligence"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Artificial Intelligence
@@ -257,7 +257,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/whatWeDo/cybersecurity-digital-trust"
+                  href="/whatWeDo/cybersecurity-and-digital-trust"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Cybersecurity & Digital Trust

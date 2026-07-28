@@ -33,7 +33,7 @@ const ITEMS = [
 export default function ProductDesign() {
     return (
         <section className="w-full py-10 sm:py-16 px-6 sm:px-[52px]">
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-[79px] max-w-[1180px] mx-auto">
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-[79px] max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -59,9 +59,8 @@ export default function ProductDesign() {
                     {ITEMS.map((item, index) => (
                         <div
                             key={item.title}
-                            className={`flex items-center gap-6 sm:gap-[37px] py-6 sm:py-[18px] ${
-                                index !== 0 ? "border-t border-[#d9d9d9]" : ""
-                            } ${index === ITEMS.length - 1 ? "border-b border-[#d9d9d9]" : ""}`}
+                            className={`flex items-center gap-6 sm:gap-[37px] py-6 sm:py-[18px] ${index !== 0 ? "border-t border-[#d9d9d9]" : ""
+                                } ${index === ITEMS.length - 1 ? "border-b border-[#d9d9d9]" : ""}`}
                         >
                             <div className="relative size-[44px] sm:size-[60px] shrink-0">
                                 <Image src={item.icon} alt="" fill className="object-contain" />

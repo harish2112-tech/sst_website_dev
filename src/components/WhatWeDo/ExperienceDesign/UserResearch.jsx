@@ -44,7 +44,7 @@ const CARDS = [
 
 export default function UserResearch() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[50px]">
+        <section className="w-full py-10 sm:pt-5 sm:pb-5 px-6 sm:px-[50px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function UserResearch() {
                 </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[17px] max-w-[1180px] mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[17px] max-w-[1390px] mx-auto">
                 {CARDS.map((card, index) => (
                     <motion.div
                         key={card.title}

@@ -24,18 +24,25 @@ const page = () => {
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div className="relative -mt-[64px] lg:-mt-[68px] h-[500px] sm:h-[700px] lg:h-[800px]">
-                <Hero />
-                <HeroText />
+            <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
+                <div className="sticky top-0 h-[340px] sm:h-screen z-0">
+                    <Hero />
+                </div>
+
+                <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
+                    <HeroText />
+                </div>
             </div>
 
-            <IntroSection />
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <IntroSection />
+            </div>
             <LegacyModernization />
             <TechnologyFocus />
             <MobileApplications />
             <APIDevelopment />
             <MicroservicesArchitecture />
-            <PenetrationTesting /> 
+            <PenetrationTesting />
             <InternalDeveloperPlatforms />
             <DevOpsSection />
             <EnterpriseApplicationDevelopment />

@@ -12,7 +12,6 @@ const COLUMNS = [
     {
         title: "User Research",
         items: ["Understanding user needs", "Identifying pain points", "Validating design decisions", "Enhancing product functionality"],
-        highlighted: true,
     },
     {
         title: "Prototyping",
@@ -41,7 +40,7 @@ export default function Accessibility() {
                 </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-black/70 max-w-[1280px] mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 border border-black/70 w-full  mx-auto">
                 {COLUMNS.map((col, index) => (
                     <motion.div
                         key={col.title}
@@ -49,17 +48,15 @@ export default function Accessibility() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                        className={`relative border-black/70 border-r last:border-r-0 px-6 py-10 sm:py-14 min-h-[380px] sm:min-h-[420px] overflow-hidden ${
-                            col.highlighted ? "text-white" : "text-black"
-                        }`}
+                        className="group relative border border-black/70  px-6 py-10 sm:py-14 min-h-[380px] sm:min-h-[620px] overflow-hidden text-black transition-colors duration-300 hover:text-white"
                     >
-                        {col.highlighted && (
-                            <div aria-hidden className="absolute inset-0">
-                                <Image src={highlightBg} alt="" fill className="object-cover" />
-                                <div className="absolute inset-0 bg-[#0a2b3e]/90" />
-                            </div>
-                        )}
-                        <div className="relative flex flex-col gap-12 sm:gap-16">
+                        <div
+                            aria-hidden
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                            <div className="absolute inset-0 bg-[#0a2b3e]/90" />
+                        </div>
+                        <div className="relative md:mt-15 flex flex-col gap-12 sm:gap-16">
                             <p className="text-xl sm:text-[32px] font-normal">{col.title}</p>
                             <ul className="list-disc pl-5 flex flex-col gap-2 text-sm sm:text-lg font-light">
                                 {col.items.map((item) => (

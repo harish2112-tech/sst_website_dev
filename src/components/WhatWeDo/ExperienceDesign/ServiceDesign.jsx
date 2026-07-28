@@ -28,7 +28,7 @@ export default function ServiceDesign() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col gap-3 max-w-[1180px] mx-auto mb-10 sm:mb-[47px]"
+                className="flex flex-col gap-3 max-w-[1390px] mx-auto mb-10 sm:mb-[47px]"
             >
                 <h2 className="text-[#0d0c22] text-2xl font-medium">Service Design</h2>
                 <p className="text-black text-base sm:text-lg font-light">
@@ -39,7 +39,7 @@ export default function ServiceDesign() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row items-end gap-8 lg:gap-8 max-w-[1180px] mx-auto">
+            <div className="flex flex-col lg:flex-row items-end gap-8 lg:gap-8 max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}

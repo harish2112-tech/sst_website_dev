@@ -7,7 +7,7 @@ import introImage from "@/assets/WhatWeDo/Digital Engineering/Section2_Image.svg
 export default function IntroSection() {
     return (
         <section className="w-full py-10 sm:py-[40px] px-6 sm:px-10">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-[143px] items-center max-w-[1300px] mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-[143px] items-center max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}
