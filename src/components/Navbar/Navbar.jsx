@@ -124,9 +124,9 @@ const Navbar = () => {
       { name: "Experience Design", href: "/whatWeDo/experience-design" },
       { name: "Intelligent Automation", href: "/services/intelligentAutomation" },
       { name: "Cybersecurity & Digital Trust", href: "/whatWeDo/cybersecurity-digital-trust" },
-      { name: "Managed Services", href: "/services/managedServices" },
-      { name: "Business Advisory", href: "/services/businessAdvisory" },
-      { name: "Innovation & Emerging Technologies", href: "/services/Innovation" },
+      { name: "Managed Services", href: "/whatWeDo/managed-services" },
+      { name: "Business Advisory", href: "/whatWeDo/business-advisory" },
+      { name: "Innovation & Emerging Technologies", href: "/whatWeDo/innovation-emerging-technologies" },
     ],
 
     industries: [

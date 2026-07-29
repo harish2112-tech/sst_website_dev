@@ -6,8 +6,8 @@ import sectionImage from "@/assets/WhatWeDo/Artificial Intelligence/Section2_Ima
 
 export default function WhyAIMatters() {
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[50px]">
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-[143px] items-center max-w-[1300px] mx-auto">
+        <section className="w-full py-10 sm:py-[40px] px-6 sm:px-10">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-[143px] items-center max-w-[1390px] mx-auto">
                 <motion.div
                     initial={{ opacity: 0, x: -24 }}
                     whileInView={{ opacity: 1, x: 0 }}

@@ -89,7 +89,7 @@ export default function IntelligentAssistantsCards() {
     const [active, setActive] = useState(0);
 
     return (
-        <section className="w-full py-10 sm:py-16 px-6 sm:px-[40px]">
+        <section className="w-full py-10 sm:py-16 px-4 sm:px-[40px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -105,64 +105,67 @@ export default function IntelligentAssistantsCards() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 max-w-screen mx-auto sm:h-[432px]">
-                {TABS.map((tab, index) => {
-                    const isActive = index === active;
-                    const dimTop = index % 2 === 0;
+            <div className="w-full overflow-hidden">
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:h-[432px]">
+                    {TABS.map((tab, index) => {
+                        const isActive = index === active;
+                        const dimTop = index % 2 === 0;
 
-                    return (
-                        <button
-                            key={tab.title}
-                            type="button"
-                            onClick={() => setActive(index)}
-                            className={`group relative shrink-0 overflow-hidden text-left transition-[width] duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] w-full h-[280px] sm:h-full ${
-                                isActive ? "border border-[#b1b1b1] sm:w-[401px]" : "sm:w-[220px]"
-                            }`}
-                        >
-                            {isActive ? (
-                                <div className="flex flex-col sm:flex-row h-full">
-                                    <div className="relative w-full sm:w-[151px] h-[140px] sm:h-full shrink-0 overflow-hidden">
-                                        <Image src={tab.image} alt="" fill className="object-cover" />
-                                        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent" />
-                                        <p className="absolute top-2 left-2 right-2 text-white text-base font-normal">{tab.title}</p>
-                                    </div>
-                                    <div className="flex flex-1 flex-col justify-between gap-4 p-6 text-[#515151] text-sm">
-                                        <div>
-                                            <p className="mb-1">Deliverables</p>
-                                            <ul className="list-disc pl-5 space-y-0.5">
-                                                {tab.deliverables.map((item) => (
-                                                    <li key={item}>{item}</li>
-                                                ))}
-                                            </ul>
+                        return (
+                            <button
+                                key={tab.title}
+                                type="button"
+                                onClick={() => setActive(index)}
+                                className={`group relative overflow-hidden text-left transition-all duration-700 ease-in-out w-full 
+    ${isActive
+                                        ? "h-[420px] sm:h-full border border-[#b1b1b1] sm:flex-[2]"
+                                        : "h-[180px] sm:h-full sm:flex-1"
+                                    }
+`}
+                            >
+                                {isActive ? (
+                                    <div className="flex flex-col sm:flex-row h-full">
+                                        <div className="relative w-full sm:w-[151px] h-[140px] sm:h-full shrink-0 overflow-hidden">
+                                            <Image src={tab.image} alt="" fill className="object-cover" />
+                                            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent" />
+                                            <p className="absolute top-2 left-2 right-2 text-white text-base font-normal">{tab.title}</p>
                                         </div>
-                                        <p>{tab.desc}</p>
+                                        <div className="flex flex-1 flex-col justify-between gap-4 p-6 text-[#515151] text-sm">
+                                            <div>
+                                                <p className="mb-1">Deliverables</p>
+                                                <ul className="list-disc pl-5 space-y-0.5">
+                                                    {tab.deliverables.map((item) => (
+                                                        <li key={item}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <p>{tab.desc}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ) : (
-                                <>
-                                    <Image
-                                        src={tab.image}
-                                        alt=""
-                                        fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                    <div
-                                        className={`absolute inset-0 bg-gradient-to-b ${
-                                            dimTop ? "from-transparent to-black/70" : "from-black/70 to-transparent"
-                                        }`}
-                                    />
-                                    <p
-                                        className={`absolute left-2 right-2 text-white text-sm sm:text-base font-normal text-center ${
-                                            dimTop ? "bottom-2" : "top-2"
-                                        }`}
-                                    >
-                                        {tab.title}
-                                    </p>
-                                </>
-                            )}
-                        </button>
-                    );
-                })}
+                                ) : (
+                                    <>
+                                        <Image
+                                            src={tab.image}
+                                            alt=""
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                        <div
+                                            className={`absolute inset-0 bg-gradient-to-b ${dimTop ? "from-transparent to-black/70" : "from-black/70 to-transparent"
+                                                }`}
+                                        />
+                                        <p
+                                            className={`absolute left-2 right-2 text-white text-sm sm:text-base font-normal text-center ${dimTop ? "bottom-2" : "top-2"
+                                                }`}
+                                        >
+                                            {tab.title}
+                                        </p>
+                                    </>
+                                )}
+                            </button>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );

@@ -147,6 +147,7 @@ const Footer = () => {
               </li> */}
               </ul>
             </div>
+
             {/* <div className="flex space-x-3 md:col-span-1">
               {/* <a
               href="https://www.linkedin.com/company/supportstudiotechnologies/"
@@ -265,7 +266,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/managedServices"
+                  href="/whatWeDo/managed-services"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Managed Services
@@ -273,7 +274,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/businessAdvisory"
+                  href="/whatWeDo/business-advisory"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Business Advisory
@@ -281,7 +282,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/Innovation"
+                  href="/whatWeDo/innovation-emerging-technologies"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Innovation & Emerging Technologies
@@ -510,7 +511,7 @@ const Footer = () => {
 
         </div>
 
-
+        {/* policy  */}
         <div className="grid grid-cols-1 md:grid-cols-6  md:gap-16  ">
 
           <div className="md:col-span-2 ">

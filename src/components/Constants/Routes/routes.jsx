@@ -27,6 +27,8 @@ export const validRoutes = [
   "/whatWeDo/cybersecurity-digital-trust",
   "/whatWeDo/digital-engineering",
   "/whatWeDo/experience-design",
+  "/whatWeDo/artificial-intelligence",
+  "/whatWeDo/managed-services",
   "/solutions/erp/Hanaonpremises",
   "/solutions/businessTechnology/BTP",
   "/solutions/HCM/SAPSuccess",

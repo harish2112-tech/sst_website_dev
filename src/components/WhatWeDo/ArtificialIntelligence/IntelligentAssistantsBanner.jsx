@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import bannerBg from "@/assets/WhatWeDo/Artificial Intelligence/Section7_IntelligentAssistants_Bg.svg";
 
-
 export default function IntelligentAssistantsBanner() {
     return (
         <section className="relative w-full h-[420px] sm:h-[560px] overflow-hidden bg-black">

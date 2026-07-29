@@ -22,7 +22,7 @@ import AILifecycle from "@/components/WhatWeDo/ArtificialIntelligence/AILifecycl
 
 const page = () => {
     return (
-        <div className="min-h-screen bg-white flex flex-col font-sans">
+        <div className="min-h-screen bg-white flex flex-col font-sans overflow-x-hidden">
             <Navbar />
 
             <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
