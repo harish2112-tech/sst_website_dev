@@ -116,8 +116,8 @@ const Navbar = () => {
     capabilities: [
       { name: "Enterprise Transformation", href: "/services/enterpriseTransformation" },
       { name: "Artificial Intelligence", href: "/whatWeDo/artificial-intelligence" },
-      { name: "Cloud & Infrastructure", href: "/services/cloudInfrastructure" },
-      { name: "Data & Intelligence", href: "/services/dataIntelligence" },
+      { name: "Cloud & Infrastructure", href: "/whatWeDo/cloud-infrastructure" },
+      { name: "Data & Intelligence", href: "/whatWeDo/data-intelligence" },
       { name: "Digital Engineering", href: "/whatWeDo/digital-engineering" },
       { name: "Customer Experience", href: "/whatWeDo/customer-experience" },
 

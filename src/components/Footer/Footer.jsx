@@ -203,7 +203,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/cloudInfrastructure"
+                  href="/whatWeDo/cloud-infrastructure"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Cloud & Infrastructure
@@ -211,7 +211,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/dataIntelligence"
+                  href="/whatWeDo/data-intelligence"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Data & Intelligence

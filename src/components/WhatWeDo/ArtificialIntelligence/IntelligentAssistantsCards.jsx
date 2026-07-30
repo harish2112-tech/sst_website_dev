@@ -106,7 +106,7 @@ export default function IntelligentAssistantsCards() {
             </motion.div>
 
             <div className="w-full overflow-hidden">
-                <div className="flex flex-col sm:flex-row gap-3 w-full sm:h-[432px]">
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:h-[432px]">
                     {TABS.map((tab, index) => {
                         const isActive = index === active;
                         const dimTop = index % 2 === 0;

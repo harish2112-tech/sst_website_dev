@@ -33,6 +33,8 @@ export const validRoutes = [
   "/whatWeDo/business-advisory",
   "/whatWeDo/innovation-emerging-technologies",
   "/whatWeDo/intelligent-automation",
+  "/whatWeDo/cloud-infrastructure",
+  "/whatWeDo/data-intelligence",
   "/solutions/erp/Hanaonpremises",
   "/solutions/businessTechnology/BTP",
   "/solutions/HCM/SAPSuccess",
