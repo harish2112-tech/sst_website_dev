@@ -8,7 +8,7 @@ import FBIcon from "../../assets/Footer/FacebookIcon.svg";
 import InstagramIcon from "../../assets/Footer/instagram.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedinIcon.svg";
 // import CalendlyIcon from "../../assets/Footer/CalendlyIcon.svg";
-
+ 
 const Footer = () => {
   const [email, setEmail] = useState("");
   const handleSendEmail = () => {
