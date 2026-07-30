@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import blockchainPhoto from "@/assets/WhatWeDo/Innovation & Emerging Technologies/Section5_Bg.svg";
 
 const ITEMS = [
@@ -32,42 +32,85 @@ export default function ScenarioAnalysis() {
                 </p>
             </motion.div>
 
-            <div className="w-full">
-                <div className="relative w-full h-[220px] sm:h-[338px] overflow-hidden">
-                    <Image src={blockchainPhoto} alt="" fill className="object-cover" />
-                </div>
+            {/* Mobile */}
+            <div className="flex sm:hidden w-full flex-col gap-3 px-6">
+                {ITEMS.map((item, index) => (
+                    <motion.div
+                        key={item.title}
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.4, delay: index * 0.06 }}
+                        className="flex gap-4 rounded-[10px] bg-[#EEF6FB] px-5 py-4"
+                    >
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2D8EC5] text-sm font-medium text-white">
+                            {index + 1}
+                        </div>
 
-                <div className="flex flex-col sm:flex-row w-full">
-                    {ITEMS.map((item, index) => {
-                        const isHovered = hovered === index;
-                        return (
-                            <button
-                                key={item.title}
-                                type="button"
-                                onMouseEnter={() => setHovered(index)}
-                                onMouseLeave={() => setHovered(null)}
-                                onFocus={() => setHovered(index)}
-                                onBlur={() => setHovered(null)}
-                                className={`text-left flex-1 flex flex-col justify-start gap-3 px-4 sm:px-5 py-6 sm:py-8 transition-colors ${
-                                    isHovered ? "bg-[#2d8ec5]/75" : "bg-white"
-                                }`}
-                            >
-                                <p className={`text-lg sm:text-xl font-medium ${isHovered ? "text-white" : "text-black"}`}>
-                                    {item.title}
-                                </p>
-                                {isHovered && (
-                                    <motion.p
-                                        initial={{ opacity: 0, y: 6 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.25 }}
-                                        className="text-white text-sm font-light leading-snug"
+                        <div className="flex flex-col gap-1">
+                            <p className="text-black text-base font-medium">
+                                {item.title}
+                            </p>
+
+                            <p className="text-[#515151] text-sm font-light leading-snug">
+                                {item.desc}
+                            </p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Desktop */}
+            <div className="relative hidden sm:block w-full h-[650px] overflow-hidden">
+                <div className="relative hidden sm:block w-full h-[720px] overflow-hidden">
+                    <Image src={blockchainPhoto} alt="" fill className="object-cover" />
+
+
+                    <div
+                        className="absolute inset-0"
+                        style={{
+                            background:
+                                "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.70) 100%)",
+                        }}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        {ITEMS.map((item, index) => {
+                            const isHovered = hovered === index;
+
+                            return (
+                                <div
+                                    key={item.title}
+                                    onMouseEnter={() => setHovered(index)}
+                                    onMouseLeave={() => setHovered(null)}
+                                    className={`flex-1 h-[200px] transition-all duration-300 px-6 py-6 cursor-pointer ${isHovered
+                                        ? "bg-[#2D8EC5]/80"
+                                        : "bg-white"
+                                        }`}
+                                >
+                                    <h3
+                                        className={`font-medium flex items-center justify-center text-center text-xl leading-tight ${isHovered ? "text-white" : "text-black"
+                                            }`}
                                     >
-                                        {item.desc}
-                                    </motion.p>
-                                )}
-                            </button>
-                        );
-                    })}
+                                        {item.title}
+                                    </h3>
+
+                                    <AnimatePresence>
+                                        {isHovered && (
+                                            <motion.p
+                                                initial={{ opacity: 0, y: 8 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0 }}
+                                                transition={{ duration: .25 }}
+                                                className="mt-4 text-sm leading-6 text-white"
+                                            >
+                                                {item.desc}
+                                            </motion.p>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>

@@ -68,13 +68,13 @@ export default function PMOAdvisory() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-[84px] items-start justify-center w-full max-w-screen">
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-[84px] items-stretch justify-center w-full max-w-screen">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative w-full lg:w-[550px] aspect-[550/700] shrink-0 overflow-hidden bg-black"
+                    className="relative w-full lg:w-[550px] lg:h-auto min-h-[700px] overflow-hidden bg-black shrink-0"
                 >
                     <Image src={pmoPhoto} alt="" fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />

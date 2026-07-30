@@ -62,7 +62,7 @@ export default function SAPManagedServices() {
                 </motion.h2>
 
                 <div className="relative mt-10 sm:mt-[60px]">
-                    <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen h-[220px] sm:h-[289px] border-y-4 border-white">
+                    <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[1520px] h-[220px] sm:h-[289px] border-y-4 border-white">
                         <Image src={buildingPhoto} alt="" fill className="object-cover" />
                         {/* <div className="absolute inset-0 bg-[#003756]/10" /> */}
                     </div>

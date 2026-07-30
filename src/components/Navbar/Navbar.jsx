@@ -119,10 +119,10 @@ const Navbar = () => {
       { name: "Cloud & Infrastructure", href: "/services/cloudInfrastructure" },
       { name: "Data & Intelligence", href: "/services/dataIntelligence" },
       { name: "Digital Engineering", href: "/whatWeDo/digital-engineering" },
-      { name: "Customer Experience", href: "/services/CustomerExperience" },
+      { name: "Customer Experience", href: "/whatWeDo/customer-experience" },
 
       { name: "Experience Design", href: "/whatWeDo/experience-design" },
-      { name: "Intelligent Automation", href: "/services/intelligentAutomation" },
+      { name: "Intelligent Automation", href: "/whatWeDo/intelligent-automation" },
       { name: "Cybersecurity & Digital Trust", href: "/whatWeDo/cybersecurity-digital-trust" },
       { name: "Managed Services", href: "/whatWeDo/managed-services" },
       { name: "Business Advisory", href: "/whatWeDo/business-advisory" },

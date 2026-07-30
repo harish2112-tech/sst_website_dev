@@ -58,7 +58,7 @@ export default function DigitalTwins() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-0 w-full max-w-[1181px]">
+            <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-0 w-full max-w-[1400px] mx-auto">
                 <div className="flex flex-col justify-between w-full lg:w-[469px] shrink-0">
                     {ITEMS.map((item, index) => {
                         const isActive = index === active;
@@ -67,9 +67,8 @@ export default function DigitalTwins() {
                                 key={item.title}
                                 type="button"
                                 onClick={() => setActive(index)}
-                                className={`text-left flex flex-col justify-center px-3 transition-all ${
-                                    isActive ? "border-l-[5px] border-[#2d8ec5] py-4 gap-1" : "border-l-0 py-2"
-                                }`}
+                                className={`text-left flex flex-col justify-center px-3 transition-all ${isActive ? "border-l-[5px] border-[#2d8ec5] py-4 gap-1" : "border-l-0 py-2"
+                                    }`}
                             >
                                 <span className={`text-black ${isActive ? "text-xl sm:text-2xl font-medium" : "text-[#515151] text-lg font-light"}`}>
                                     {item.title}
@@ -89,7 +88,7 @@ export default function DigitalTwins() {
                     })}
                 </div>
 
-                <div className="relative w-full lg:flex-1 h-[280px] sm:h-[420px] lg:h-auto overflow-hidden">
+                <div className="relative w-full lg:flex-1 h-[350px] sm:h-[550px] lg:h-[520px] overflow-hidden">
                     <AnimatedImage active={active} src={twinsPhoto} />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
                     <div className="absolute inset-x-6 sm:inset-x-10 bottom-6 sm:bottom-10 flex items-end justify-between gap-6">

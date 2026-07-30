@@ -6,56 +6,56 @@ import { motion } from "framer-motion";
 import assessmentBg from "@/assets/WhatWeDo/Business Advisory/Section11_Technology_Assessment_Bg.svg";
 
 const CARDS = [
-  {
-    eyebrow: "Machine Learning",
-    title: "Responsible AI Frameworks",
-    lines: [
-      "Build AI systems that are transparent and trustworthy.",
-      "Implement governance, fairness, and compliance practices.",
-      "Reduce operational and regulatory risks.",
-      "Deploy AI responsibly across the enterprise.",
-    ],
-  },
-  {
-    eyebrow: "Machine Learning",
-    title: "Enterprise AI Solutions",
-    lines: [
-      "Develop scalable AI-powered business applications.",
-      "Automate workflows with intelligent decision-making.",
-      "Integrate AI seamlessly into existing systems.",
-      "Drive measurable business outcomes.",
-    ],
-  },
-  {
-    eyebrow: "Machine Learning",
-    title: "Predictive Analytics",
-    lines: [
-      "Forecast demand and customer behaviour.",
-      "Identify opportunities through advanced analytics.",
-      "Optimise operations with data-driven insights.",
-      "Enable proactive business planning.",
-    ],
-  },
-  {
-    eyebrow: "Machine Learning",
-    title: "Intelligent Automation",
-    lines: [
-      "Automate repetitive and time-consuming processes.",
-      "Improve efficiency with AI-powered workflows.",
-      "Enhance accuracy while reducing manual effort.",
-      "Free teams to focus on strategic initiatives.",
-    ],
-  },
-  {
-  eyebrow: "Machine Learning",
-  title: "Computer Vision",
-  lines: [
-    "Extract actionable insights from images and video.",
-    "Automate visual inspection and quality assurance.",
-    "Enable real-time object detection and recognition.",
-    "Power intelligent applications with visual AI.",
-  ],
-},
+    {
+        eyebrow: "Machine Learning",
+        title: "Responsible AI Frameworks",
+        lines: [
+            "Build AI systems that are transparent and trustworthy.",
+            "Implement governance, fairness, and compliance practices.",
+            "Reduce operational and regulatory risks.",
+            "Deploy AI responsibly across the enterprise.",
+        ],
+    },
+    {
+        eyebrow: "Machine Learning",
+        title: "Enterprise AI Solutions",
+        lines: [
+            "Develop scalable AI-powered business applications.",
+            "Automate workflows with intelligent decision-making.",
+            "Integrate AI seamlessly into existing systems.",
+            "Drive measurable business outcomes.",
+        ],
+    },
+    {
+        eyebrow: "Machine Learning",
+        title: "Predictive Analytics",
+        lines: [
+            "Forecast demand and customer behaviour.",
+            "Identify opportunities through advanced analytics.",
+            "Optimise operations with data-driven insights.",
+            "Enable proactive business planning.",
+        ],
+    },
+    {
+        eyebrow: "Machine Learning",
+        title: "Intelligent Automation",
+        lines: [
+            "Automate repetitive and time-consuming processes.",
+            "Improve efficiency with AI-powered workflows.",
+            "Enhance accuracy while reducing manual effort.",
+            "Free teams to focus on strategic initiatives.",
+        ],
+    },
+    {
+        eyebrow: "Machine Learning",
+        title: "Computer Vision",
+        lines: [
+            "Extract actionable insights from images and video.",
+            "Automate visual inspection and quality assurance.",
+            "Enable real-time object detection and recognition.",
+            "Power intelligent applications with visual AI.",
+        ],
+    },
 ];
 export default function TechnologyAssessment() {
     const [active, setActive] = useState(0);
@@ -126,19 +126,37 @@ export default function TechnologyAssessment() {
                     </button>
                 </div>
 
-                <div className="mt-8 sm:mt-0 sm:absolute sm:left-[970px] sm:top-[531px] flex items-center justify-center gap-3 bg-white rounded-full px-4 py-3 w-max mx-auto sm:mx-0">
-                    <button type="button" aria-label="Previous" onClick={() => step(-1)} className="text-xl text-black/70 hover:text-black transition-colors">
+                <div className="mt-8 sm:mt-0 sm:absolute sm:left-[970px] sm:top-[531px] bg-white rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2 mx-auto sm:mx-0">
+                    <button
+                        type="button"
+                        aria-label="Previous"
+                        onClick={() => step(-1)}
+                        className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-black text-black shrink-0 transition-transform hover:scale-110"
+                    >
                         ←
                     </button>
-                    {CARDS.map((_, index) => (
-                        <span
-                            key={index}
-                            className={`size-2 rounded-full border ${
-                                index === active ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black bg-transparent"
-                            }`}
-                        />
-                    ))}
-                    <button type="button" aria-label="Next" onClick={() => step(1)} className="text-xl text-black/70 hover:text-black transition-colors">
+
+                    <div className="flex items-center gap-[10px]">
+                        {CARDS.map((_, index) => (
+                            <button
+                                key={index}
+                                type="button"
+                                aria-label={`Go to slide ${index + 1}`}
+                                onClick={() => setActive(index)}
+                                className={`size-[8px] rounded-full border-[0.5px] transition-colors ${index === active
+                                    ? "bg-[#2d8ec5] border-[#2d8ec5]"
+                                    : "border-black"
+                                    }`}
+                            />
+                        ))}
+                    </div>
+
+                    <button
+                        type="button"
+                        aria-label="Next"
+                        onClick={() => step(1)}
+                        className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-black text-black shrink-0 transition-transform hover:scale-110"
+                    >
                         →
                     </button>
                 </div>

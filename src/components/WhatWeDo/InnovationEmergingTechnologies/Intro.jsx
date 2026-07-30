@@ -12,7 +12,7 @@ export default function Intro() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="flex flex-col gap-4 w-full sm:max-w-[647px]"
+                className="flex flex-col gap-5 max-w-[760px]"
             >
                 <h2 className="text-black text-2xl font-normal">Innovation &amp; Emerging Technologies</h2>
                 <p className="text-black text-lg font-light">
@@ -33,7 +33,7 @@ export default function Intro() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full sm:w-[414px] h-[220px] sm:h-[332px] shrink-0 bg-black"
+                className="relative w-full lg:w-full h-[260px] lg:h-[360px] justify-self-end overflow-hidden"
             >
                 <Image src={introPhoto} alt="" fill className="object-cover" />
             </motion.div>

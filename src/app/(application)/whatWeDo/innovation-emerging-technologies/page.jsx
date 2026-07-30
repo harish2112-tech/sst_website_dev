@@ -35,15 +35,18 @@ const page = () => {
                 <div className="sticky top-0 h-[340px] sm:h-screen z-0">
                     <Hero />
                 </div>
+
                 <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
                     <HeroText />
                 </div>
             </div>
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] min-h-[340px] sm:min-h-screen bg-white">
+
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
                 <Intro />
+                <IoT />
             </div>
 
-            <IoT />
+
             <DigitalTwins />
             <ScenarioAnalysis />
             <ExtendedReality />

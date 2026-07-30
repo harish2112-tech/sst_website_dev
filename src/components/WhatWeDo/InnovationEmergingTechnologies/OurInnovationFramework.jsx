@@ -48,7 +48,7 @@ export default function OurInnovationFramework() {
                             </div>
                             <div>
                                 <p className="text-black text-xl sm:text-2xl font-medium">{step.title}</p>
-                                <p className="text-black text-sm sm:text-base font-light mt-2 leading-snug">{step.desc}</p>
+                                <p className="text-[#515151] text-sm sm:text-base font-light mt-2 leading-snug">{step.desc}</p>
                             </div>
                         </motion.div>
                     ))}

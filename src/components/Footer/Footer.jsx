@@ -227,7 +227,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/customerExperience"
+                  href="/whatWeDo/customer-experience"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Customer Experience
@@ -250,7 +250,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services/intelligentAutomation"
+                  href="/whatWeDo/intelligent-automation"
                   className="hover:text-white transition-colors duration-200"
                 >
                   Intelligent Automation
