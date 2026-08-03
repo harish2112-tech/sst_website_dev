@@ -63,7 +63,7 @@ export default function BackupDisasterRecovery() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col items-start w-full max-w-[1137px]">
+            <div className="flex flex-col items-start w-full max-w-screen">
                 {ITEMS.map((item, index) => {
                     const isOpen = openIndex === index;
                     return (

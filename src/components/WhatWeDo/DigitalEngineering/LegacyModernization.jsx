@@ -38,6 +38,17 @@ export default function LegacyModernization() {
             <div className="relative w-full h-[280px] sm:h-[400px] overflow-hidden">
                 <Image src={buildingPhoto} alt="" fill className="object-cover" />
                 <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute top-10 left-1/2 -translate-x-1/2 text-center text-white z-20">
+                    <h2 className="text-4xl font-light">
+                        Legacy Modernization
+                    </h2>
+
+                    <p className="mt-3 max-w-3xl text-lg text-gray-200">
+                        Transform aging enterprise applications into scalable,
+                        cloud-ready platforms while preserving critical business
+                        functionality.
+                    </p>
+                </div>
             </div>
 
             <motion.div

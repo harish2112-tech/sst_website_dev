@@ -3,10 +3,26 @@
 import { motion } from "framer-motion";
 
 const PRINCIPLES = [
-    { title: "SAP Projects Delivered", description: "Helping businesses transform with innovative SAP solutions." },
-    { title: "SAP Projects Delivered", description: "Helping businesses transform with innovative SAP solutions." },
-    { title: "SAP Projects Delivered", description: "Helping businesses transform with innovative SAP solutions." },
-    { title: "SAP Projects Delivered", description: "Helping businesses transform with innovative SAP solutions." },
+    {
+        title: "Client-Centric Approach",
+        description:
+            "Minimize custom code in the SAP core to ensure seamless upgrades and innovations.",
+    },
+    {
+        title: "Innovation with Purpose",
+        description:
+            "Build extensions on SAP Business Technology Platform to stay upgrade-safe.",
+    },
+    {
+        title: "Excellence in Delivery",
+        description:
+            "Use standard APIs and integration suites instead of direct system modifications.",
+    },
+    {
+        title: "Integrity & Trust",
+        description:
+            "Adopt cloud-native practices for scalability, agility, and continuous innovation.",
+    },
 ];
 
 const containerVariants = {

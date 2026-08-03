@@ -36,7 +36,7 @@ export default function CloudMigration() {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <section className="w-full pb-10 sm:pb-16 flex flex-col items-center gap-8 sm:gap-[62px]">
+        <section className="w-full pb-10 sm:pb-0 flex flex-col items-center gap-8 sm:gap-[62px]">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -93,47 +93,56 @@ export default function CloudMigration() {
                     {STEPS.map((step, index) => {
                         const isActive = hovered === index;
                         return (
-                            <button
-                                key={step.title}
-                                type="button"
-                                onMouseEnter={() => setHovered(index)}
-                                onFocus={() => setHovered(index)}
-                                onBlur={() => setHovered(null)}
-                                className={`relative h-full flex-1 flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-6 overflow-hidden transition-colors duration-300 ${
-                                    isActive ? "bg-black" : "bg-white"
-                                }`}
-                            >
-                                {/* Hover artwork: an actual image swap, not a color tint */}
+                            <div key={step.title} className="relative h-full flex-1">
+                                {/* Number badge: floats above the card, straddling the hero/card boundary */}
                                 {isActive && (
-                                    <>
-                                        <Image
-                                            src={hoverImg}
-                                            alt=""
-                                            fill
-                                            className="object-cover"
-                                        />
-                                        <div className="absolute inset-0 bg-black/55" />
-                                    </>
+                                    <div className="absolute -top-[30px] left-1/2 z-20 flex size-[60px] -translate-x-1/2 items-center justify-center bg-white">
+                                        <span className="text-black text-[32px] font-light leading-none">
+                                            {index + 1}
+                                        </span>
+                                    </div>
                                 )}
-
-                                <p
-                                    className={`relative z-10 text-lg lg:text-xl font-medium leading-tight ${
-                                        isActive ? "text-white" : "text-black"
+                                <button
+                                    type="button"
+                                    onMouseEnter={() => setHovered(index)}
+                                    onFocus={() => setHovered(index)}
+                                    onBlur={() => setHovered(null)}
+                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-6 overflow-hidden transition-colors duration-300 ${
+                                        isActive ? "bg-black" : "bg-white"
                                     }`}
                                 >
-                                    {step.title}
-                                </p>
-                                {isActive && (
-                                    <motion.p
-                                        initial={{ opacity: 0, y: 6 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.25 }}
-                                        className="relative z-10 text-white text-sm font-light leading-snug"
+                                    {/* Hover artwork: an actual image swap, not a color tint */}
+                                    {isActive && (
+                                        <>
+                                            <Image
+                                                src={hoverImg}
+                                                alt=""
+                                                fill
+                                                className="object-cover"
+                                            />
+                                            <div className="absolute inset-0 bg-black/55" />
+                                        </>
+                                    )}
+
+                                    <p
+                                        className={`relative z-10 text-lg lg:text-xl font-medium leading-tight ${
+                                            isActive ? "text-white" : "text-black"
+                                        }`}
                                     >
-                                        {step.desc}
-                                    </motion.p>
-                                )}
-                            </button>
+                                        {step.title}
+                                    </p>
+                                    {isActive && (
+                                        <motion.p
+                                            initial={{ opacity: 0, y: 6 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.25 }}
+                                            className="relative z-10 text-white text-sm font-light leading-snug"
+                                        >
+                                            {step.desc}
+                                        </motion.p>
+                                    )}
+                                </button>
+                            </div>
                         );
                     })}
                 </div>

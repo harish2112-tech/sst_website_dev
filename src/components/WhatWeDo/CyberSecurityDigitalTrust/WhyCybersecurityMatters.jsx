@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/card1.jpg";
+import card1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/card1.svg";
 import card2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/card2.jpg";
-import card3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/card3.jpg";
-import card4 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/card4.jpg";
+import card3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/card3.svg";
+import card4 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/card4.svg";
 
 const CARDS = [
     { image: card1, title: "Protect critical business systems", desc: "Helping businesses transform with innovative SAP solutions." },

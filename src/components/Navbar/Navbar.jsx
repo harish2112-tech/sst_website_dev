@@ -262,13 +262,9 @@ const Navbar = () => {
                   </Link>
 
                   <li className="relative group">
-                    <Link
-                      href="/#"
-                      className={`${navLinkClass} flex items-center gap-1 ${pathname === "/services"
-                        ? "text-[#2d8ec5] after:w-full"
-                        : isNavbarLight
-                          ? "text-black"
-                          : "text-white"
+                    <button
+                      type="button"
+                      className={`${navLinkClass} flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
                         }`}
                     >
                       What we do
@@ -286,7 +282,7 @@ const Navbar = () => {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </Link>
+                    </button>
 
                     {/* Dropdown */}
                     <div
@@ -543,16 +539,14 @@ const Navbar = () => {
                 className={`w-full flex items-center justify-between rounded-lg ${pathname.startsWith("/services") ? "bg-gray-100" : ""
                   }`}
               >
-                <Link
-                  href="/"
-                  onClick={closeMenu}
-                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium transition-colors duration-300 rounded-lg ${pathname.startsWith("/services")
+                <div
+                  className={`flex-1 py-3 px-4 text-2xl sm:text-3xl font-medium rounded-lg ${pathname.startsWith("/services")
                     ? "text-[#2d8ec5]"
-                    : "text-gray-800 hover:text-[#2d8ec5]"
+                    : "text-gray-800"
                     }`}
                 >
                   What we do
-                </Link>
+                </div>
 
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -643,7 +637,7 @@ const Navbar = () => {
                   <div className="border-t border-gray-200" />
 
                   {/* Industries */}
-                  {/* <div>
+                  <div>
 
                     <button
                       onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
@@ -689,7 +683,7 @@ const Navbar = () => {
                       </ul>
                     </div>
 
-                  </div> */}
+                  </div>
 
                 </div>
               </div>

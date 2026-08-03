@@ -7,24 +7,16 @@ import discoverImage from "@/assets/WhoWeAre/LearnindAndDevelopment.jpg";
 
 const CARDS = [
     {
-        title: "Grow",
-        heading: "Learning and Development",
-        bullets: [
-            "We believe continuous learning drives exceptional careers.",
-            "Enhance your expertise through structured SAP training programs.",
-            "Gain hands-on experience with real-world client projects.",
-            "Learn from certified consultants and experienced industry mentors.",
-        ],
+        title: "Our Expertise",
+        heading: "Strategic Expertise",
+        description:
+            "We combine deep industry knowledge with proven consulting experience to solve complex business challenges. Our team works closely with clients to understand their goals and design tailored strategies. By aligning technology with business objectives, we deliver practical solutions that drive efficiency, innovation, and sustainable growth.",
     },
     {
-        title: "Grow",
-        heading: "Learning and Development",
-        bullets: [
-            "We believe continuous learning drives exceptional careers.",
-            "Enhance your expertise through structured SAP training programs.",
-            "Gain hands-on experience with real-world client projects.",
-            "Learn from certified consultants and experienced industry mentors.",
-        ],
+        title: "Our Innovation",
+        heading: "Innovation That Delivers",
+        description:
+            "We leverage SAP, cloud, AI, cybersecurity, and modern digital technologies to build future-ready enterprises. Our focus is on creating scalable, secure, and high-performing solutions that accelerate digital transformation. Every engagement is driven by innovation, measurable outcomes, and long-term business value.",
     },
 ];
 
@@ -73,9 +65,7 @@ export default function DiscoverWhatSetsUsApart() {
                                 <h3 className="text-2xl font-medium text-black mt-1">{card.heading}</h3>
                             </div>
                             <div className="text-sm sm:text-base text-[#6c6c6c] leading-relaxed space-y-1">
-                                {card.bullets.map((line) => (
-                                    <p key={line}>{line}</p>
-                                ))}
+                                <p>{card.description}</p>
                             </div>
                         </motion.div>
                     ))}

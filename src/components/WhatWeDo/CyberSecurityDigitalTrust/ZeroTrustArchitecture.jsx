@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import zeroTrustBg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Zero-Trust-Architecture.jpg";
+import zeroTrustBg1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Zero-Trust-Architecture2.jpg";
+import zeroTrustBg2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Zero-Trust-Architecture3.jpg";
 
 const SLIDES = [
     {
@@ -12,6 +14,7 @@ const SLIDES = [
             "Traditional perimeter-based security models no longer provide adequate protection in distributed enterprise environments.",
             "Zero Trust Architecture follows the principle of Never Trust, Always Verify, requiring continuous authentication, authorization, and validation of every user, device, application, and workload regardless of location.",
         ],
+        image: zeroTrustBg,
     },
     {
         title: "Least Privilege Access",
@@ -19,6 +22,7 @@ const SLIDES = [
             "Access is granted strictly on a need-to-know, need-to-use basis, minimizing the potential impact of any single compromised credential.",
             "Privileges are continuously reassessed as roles, projects, and risk levels change across the organization.",
         ],
+        image: zeroTrustBg1,
     },
     {
         title: "Micro-Segmentation",
@@ -26,6 +30,7 @@ const SLIDES = [
             "Networks are divided into small, isolated zones so that a breach in one segment cannot freely spread to the rest of the environment.",
             "Granular policies control east-west traffic between workloads, applications, and services.",
         ],
+        image: zeroTrustBg2,
     },
     {
         title: "Device Trust & Posture",
@@ -33,6 +38,7 @@ const SLIDES = [
             "Every device is continuously evaluated for compliance, patch level, and security posture before being granted access.",
             "Non-compliant or unmanaged devices are automatically restricted or remediated before reaching sensitive resources.",
         ],
+        image: zeroTrustBg1,
     },
     {
         title: "Continuous Monitoring & Analytics",
@@ -40,6 +46,7 @@ const SLIDES = [
             "Behavioral analytics and telemetry are analyzed in real time to detect anomalies that signal a potential compromise.",
             "Risk signals dynamically adjust access decisions, tightening controls the moment suspicious activity is observed.",
         ],
+        image: zeroTrustBg2,
     },
     {
         title: "Software-Defined Perimeter",
@@ -47,6 +54,7 @@ const SLIDES = [
             "Resources are cloaked from the public network and only become visible to authenticated, authorized identities.",
             "This dramatically reduces the enterprise's attack surface compared to traditional VPN and firewall perimeters.",
         ],
+        image: zeroTrustBg1,
     },
 ];
 
@@ -67,8 +75,25 @@ export default function ZeroTrustArchitecture() {
     return (
         <section
             className="w-full bg-cover bg-center bg-no-repeat py-10 sm:py-16 lg:py-[71px] px-6 sm:px-10 lg:px-[50px] flex flex-col items-start"
-            style={{ backgroundImage: `url(${zeroTrustBg.src})` }}
         >
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="absolute inset-0 -z-10"
+                >
+                    <Image
+                        src={SLIDES[index].image}
+                        alt=""
+                        fill
+                        priority
+                        className="object-cover"
+                    />
+                </motion.div>
+            </AnimatePresence>
             <div className="w-full lg:max-w-[664px] flex flex-col gap-3 sm:gap-[14px]">
                 <h2 className="text-black text-xl sm:text-2xl lg:text-[32px] font-normal">Zero Trust Architecture</h2>
 
@@ -93,12 +118,12 @@ export default function ZeroTrustArchitecture() {
                 </div>
 
                 <div className="flex items-center md:mt-[-50px] md:ml-[400px]">
-                    <div className="bg-[#141C22] border border-[#141C22] rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2">
+                    <div className="bg-[#DFDFDF] border border-[#DFDFDF] rounded-full flex items-center justify-center gap-[10px] h-[50px] sm:h-[61px] w-[210px] sm:w-[250px] px-2">
                         <button
                             type="button"
                             aria-label="Previous"
                             onClick={() => goTo(index - 1)}
-                            className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-white text-white hover:bg-white hover:text-black hover:border-black transition-colors shrink-0"
+                            className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-black text-black hover:bg-white hover:text-black hover:border-black transition-colors shrink-0"
                         >
                             ←
                         </button>
@@ -109,7 +134,7 @@ export default function ZeroTrustArchitecture() {
                                     type="button"
                                     aria-label={`Go to slide ${dotIndex + 1}`}
                                     onClick={() => goTo(dotIndex)}
-                                    className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-white"
+                                    className={`size-[8px] rounded-full border-[0.5px] transition-colors ${dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                                         }`}
                                 />
                             ))}
@@ -118,7 +143,7 @@ export default function ZeroTrustArchitecture() {
                             type="button"
                             aria-label="Next"
                             onClick={() => goTo(index + 1)}
-                            className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-white text-white hover:bg-white hover:text-black hover:border-black transition-colors shrink-0"
+                            className="flex items-center justify-center size-[26px] sm:size-[31px] rounded-full border border-black text-black hover:bg-white hover:text-black hover:border-black transition-colors shrink-0"
                         >
                             →
                         </button>

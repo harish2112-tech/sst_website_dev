@@ -3,38 +3,37 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import card1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section11_Rightside_card1.svg";
-import card2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section11_Rightside_card2.svg";
-import card3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section11_Rightside_card3.svg";
+
+import cardimg from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Container.jpg";
 
 const CARDS = [
     {
-        image: card1,
+        image: cardimg,
         title: "Assess",
         desc: "Effective cybersecurity is achieved through a structured lifecycle that integrates governance, technology, operations, and continuous improvement.",
     },
     {
-        image: card2,
+        image: cardimg,
         title: "Design",
         desc: "Develop security architecture, governance models, policies, and implementation roadmaps aligned with business priorities.",
     },
     {
-        image: card3,
+        image: cardimg,
         title: "Protect",
         desc: "Implement layered technical and administrative controls that safeguard identities, data, applications, and infrastructure.",
     },
     {
-        image: card1,
+        image: cardimg,
         title: "Detect",
         desc: "Deploy continuous monitoring and analytics that surface anomalies and emerging threats before they escalate into incidents.",
     },
     {
-        image: card2,
+        image: cardimg,
         title: "Respond",
         desc: "Execute rehearsed incident response playbooks to contain, eradicate, and recover from security events with minimal business impact.",
     },
     {
-        image: card3,
+        image: cardimg,
         title: "Improve",
         desc: "Feed lessons learned back into governance and controls, continuously raising the maturity of the security program over time.",
     },
@@ -114,8 +113,8 @@ export default function CybersecurityDeliveryFramework() {
                     >
                         {CARDS.map((card, i) => (
                             <div key={`${card.title}-${i}`} className="relative  w-full shrink-0 overflow-hidden" style={{ height: CARD_HEIGHT }}>
-                                {/* <Image src={card.image} alt="" fill className="object-cover " /> */}
-                                <div className="absolute inset-0 border border-black " />
+                                <Image src={card.image} alt="" fill className="object-cover " />
+                                {/* <div className="absolute inset-0 border border-black " /> */}
                                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center gap-5 px-8">
                                     <p className="text-black text-2xl sm:text-[28px] font-normal">{card.title}</p>
                                     <p className="text-[#3d3d4e] text-base sm:text-lg font-light max-w-[389px]">{card.desc}</p>

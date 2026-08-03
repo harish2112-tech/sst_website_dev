@@ -22,7 +22,7 @@ import AILifecycle from "@/components/WhatWeDo/ArtificialIntelligence/AILifecycl
 
 const page = () => {
     return (
-        <div className="min-h-screen bg-white flex flex-col font-sans overflow-x-hidden">
+        <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
             <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
@@ -34,12 +34,11 @@ const page = () => {
                     <HeroText />
                 </div>
             </div>
+
             <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
                 <WhyAIMatters />
                 <OurAIServices />
-
             </div>
-
             <MachineLearning />
             <IntelligentAssistantsCards />
             <AIStrategy />
@@ -58,3 +57,4 @@ const page = () => {
 };
 
 export default page;
+

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import selectProductIcon from "@/assets/WhatWeDo/Cloud and Infrastructure/icons/select-product_svgrepo.com.svg";
@@ -31,22 +31,101 @@ const ITEMS = [
     },
 ];
 
+const REAL_LEN = ITEMS.length;
+
+// Render three full copies of the list back-to-back and keep the scroll
+// position parked in the middle copy. That guarantees a full extra set of
+// items trailing (and leading) any real slide, so every item — including
+// the last one — always has enough room to scroll into place. (A single
+// clone on each side isn't enough once more than one item is visible at a
+// time: the last real item's target position can exceed the browser's max
+// scrollLeft and gets silently clamped to the same spot as the item before
+// it.) Once the user stops scrolling, settle() re-centers back into the
+// middle copy so the buffer is replenished on both sides for next time.
+const SLIDES = [...ITEMS, ...ITEMS, ...ITEMS];
+
 export default function MultiCloudStrategy() {
     const trackRef = useRef(null);
     const [active, setActive] = useState(0);
+    const dragState = useRef(null);
+    const scrollEndTimer = useRef(null);
 
-    const handleScroll = () => {
+    const scrollToSlide = (slideIndex, behavior = "smooth") => {
+        const el = trackRef.current;
+        const child = el?.children[slideIndex];
+        if (!el || !child) return;
+        el.scrollTo({ left: child.offsetLeft, behavior });
+    };
+
+    // Start on item 0 of the middle copy.
+    useEffect(() => {
+        scrollToSlide(REAL_LEN, "auto");
+        return () => {
+            if (scrollEndTimer.current) clearTimeout(scrollEndTimer.current);
+        };
+    }, []);
+
+    useEffect(() => {
+        const onResize = () => scrollToSlide(REAL_LEN + active, "auto");
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, [active]);
+
+    const settle = () => {
         const el = trackRef.current;
         if (!el) return;
-        const index = Math.round(el.scrollLeft / (el.scrollWidth / ITEMS.length));
-        setActive(Math.max(0, Math.min(ITEMS.length - 1, index)));
+
+        let closest = REAL_LEN;
+        let smallestDiff = Infinity;
+        for (let i = 0; i < SLIDES.length; i++) {
+            const child = el.children[i];
+            if (!child) continue;
+            const diff = Math.abs(child.offsetLeft - el.scrollLeft);
+            if (diff < smallestDiff) {
+                smallestDiff = diff;
+                closest = i;
+            }
+        }
+
+        const realIndex = closest % REAL_LEN;
+        setActive(realIndex);
+
+        // Not in the middle copy anymore — jump back into it so both a
+        // leading and a trailing buffer copy are available again.
+        if (closest < REAL_LEN || closest >= REAL_LEN * 2) {
+            scrollToSlide(REAL_LEN + realIndex, "auto");
+        }
+    };
+
+    const handleScroll = () => {
+        if (scrollEndTimer.current) clearTimeout(scrollEndTimer.current);
+        scrollEndTimer.current = setTimeout(settle, 120);
     };
 
     const goTo = (index) => {
+        scrollToSlide(REAL_LEN + index);
+        setActive(index);
+    };
+
+    // Pointer-drag-to-scroll for desktop (mouse) users; touch keeps native swipe.
+    const onPointerDown = (e) => {
+        if (e.pointerType !== "mouse") return;
         const el = trackRef.current;
         if (!el) return;
-        el.scrollTo({ left: (el.scrollWidth / ITEMS.length) * index, behavior: "smooth" });
-        setActive(index);
+        dragState.current = { startX: e.clientX, startScroll: el.scrollLeft };
+        el.setPointerCapture(e.pointerId);
+    };
+
+    const onPointerMove = (e) => {
+        if (e.pointerType !== "mouse" || !dragState.current) return;
+        const el = trackRef.current;
+        if (!el) return;
+        el.scrollLeft = dragState.current.startScroll - (e.clientX - dragState.current.startX);
+    };
+
+    const endDrag = (e) => {
+        if (e.pointerType !== "mouse") return;
+        dragState.current = null;
     };
 
     return (
@@ -68,29 +147,34 @@ export default function MultiCloudStrategy() {
             <div
                 ref={trackRef}
                 onScroll={handleScroll}
-                className="w-full max-w-[1280px] flex overflow-x-auto sm:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-2 lg:grid-cols-4"
+                onPointerDown={onPointerDown}
+                onPointerMove={onPointerMove}
+                onPointerUp={endDrag}
+                onPointerLeave={endDrag}
+                onPointerCancel={endDrag}
+                className="w-full max-w-[1280px] flex gap-6 sm:gap-10 overflow-x-auto cursor-grab active:cursor-grabbing select-none touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [scroll-snap-type:x_mandatory]"
             >
-                {ITEMS.map((item, index) => (
-                    <motion.div
-                        key={item.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                        className="shrink-0 w-[260px] sm:w-auto flex flex-col gap-6 px-4 sm:px-6 py-4 border-b border-[#d9d9d9]"
-                    >
-                        <div className="flex items-start gap-5">
-                            <div className="relative shrink-0 size-[50px] sm:size-[60px]">
-                                <Image src={item.icon} alt="" fill className="object-contain" />
-                            </div>
-                            <div className="w-px self-stretch bg-[#d9d9d9]" />
-                            <div className="flex flex-col gap-3">
-                                <p className="text-black text-xl sm:text-2xl font-normal">{item.title}</p>
-                                <p className="text-[#7f7f7f] text-base sm:text-lg font-light">{item.desc}</p>
+                {SLIDES.map((item, index) => {
+                    const isClone = index < REAL_LEN || index >= REAL_LEN * 2;
+                    return (
+                        <div
+                            key={`slide-${index}`}
+                            aria-hidden={isClone || undefined}
+                            className="shrink-0 w-[80%] sm:w-[55%] md:w-[42%] lg:w-[32%] flex flex-col gap-6 py-4 border-b border-[#d9d9d9] [scroll-snap-align:start]"
+                        >
+                            <div className="flex items-start gap-5">
+                                <div className="relative shrink-0 size-[50px] sm:size-[60px]">
+                                    <Image src={item.icon} alt="" fill className="object-contain" draggable={false} />
+                                </div>
+                                <div className="w-px self-stretch bg-[#d9d9d9]" />
+                                <div className="flex flex-col gap-3">
+                                    <p className="text-black text-xl sm:text-2xl font-normal">{item.title}</p>
+                                    <p className="text-[#7f7f7f] text-base sm:text-lg font-light">{item.desc}</p>
+                                </div>
                             </div>
                         </div>
-                    </motion.div>
-                ))}
+                    );
+                })}
             </div>
 
             <div className="flex items-center gap-[10px]">

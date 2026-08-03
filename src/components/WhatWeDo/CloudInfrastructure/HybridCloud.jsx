@@ -50,9 +50,9 @@ function LinkArrow({ light }) {
 
 export default function HybridCloud() {
     const [[index, direction], setPage] = useState([0, 1]);
-    const maxIndex = ITEMS.length - 2;
+    const maxIndex = ITEMS.length - 1;
     const active = ITEMS[index];
-    const next = ITEMS[index + 1];
+    const next = ITEMS[index + 1] ?? ITEMS[0];
 
     const goTo = (nextIndex, dir) => setPage([Math.max(0, Math.min(maxIndex, nextIndex)), dir]);
 
@@ -98,7 +98,7 @@ export default function HybridCloud() {
                                 </div>
                                 <LinkArrow light />
                             </div>
-                            <div className="bg-white w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex flex-col justify-between gap-4 text-black">
+                            <div className="hidden sm:flex bg-white w-full sm:w-[380px] h-[280px] sm:h-[377px] p-6 sm:p-[27px] flex-col justify-between gap-4 text-black">
                                 <div className="flex flex-col gap-4 sm:gap-6">
                                     <p className="text-xl sm:text-2xl font-medium">{next.title}</p>
                                     <p className="text-[#6c6c6c] text-sm sm:text-base font-light leading-relaxed">
@@ -119,7 +119,7 @@ export default function HybridCloud() {
                         disabled={index === 0}
                         className="flex items-center justify-center size-[26px] sm:size-[31px] shrink-0 transition-transform hover:scale-110 disabled:opacity-30"
                     >
-                        <Image src={arrowIcon} alt="" width={24} height={24} className="-rotate-90" />
+                        <Image src={arrowIcon} alt="" width={24} height={24} className="-rotate-180" />
                     </button>
                     <div className="flex items-center gap-[10px]">
                         {ITEMS.map((item, dotIndex) => (
@@ -127,7 +127,7 @@ export default function HybridCloud() {
                                 key={item.title}
                                 type="button"
                                 aria-label={`Go to slide ${dotIndex + 1}`}
-                                onClick={() => goTo(Math.min(dotIndex, maxIndex), dotIndex > index ? 1 : -1)}
+                                onClick={() => goTo(dotIndex, dotIndex > index ? 1 : -1)}
                                 className={`size-[8px] rounded-full border-[0.5px] transition-colors ${
                                     dotIndex === index ? "bg-[#2d8ec5] border-[#2d8ec5]" : "border-black"
                                 }`}
@@ -141,7 +141,7 @@ export default function HybridCloud() {
                         disabled={index === maxIndex}
                         className="flex items-center justify-center size-[26px] sm:size-[31px] shrink-0 transition-transform hover:scale-110 disabled:opacity-30"
                     >
-                        <Image src={arrowIcon} alt="" width={24} height={24} className="rotate-90" />
+                        <Image src={arrowIcon} alt="" width={24} height={24} className="rotate-0" />
                     </button>
                 </div>
             </div>

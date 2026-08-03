@@ -3,44 +3,46 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ceaImage from "@/assets/WhatWeDo/Digital Engineering/Section3_CEA_Image.svg";
+import ceaImage1 from "@/assets/WhatWeDo/Digital Engineering/Section3_CEA_Image.svg";
+import ceaImage2 from "@/assets/WhatWeDo/Digital Engineering/Section3_CEA_Image2.jpg";
+import ceaImage3 from "@/assets/WhatWeDo/Digital Engineering/Section3_CEA_Image3.jpg";
 
 const TABS = [
     {
         code: "CEA",
         title: "Custom Enterprise Applications",
         desc: "We develop secure, scalable enterprise applications tailored to your business processes, enabling greater efficiency, collaboration, and long-term growth.",
-        image: ceaImage,
+        image: ceaImage1,
     },
     {
         code: "ERP",
         title: "ERP & CRM Solutions",
         desc: "Implement and customize ERP and CRM platforms that unify operations, sales, and customer data into a single source of truth.",
-        image: ceaImage,
+        image: ceaImage2,
     },
     {
         code: "INT",
         title: "System Integration",
         desc: "Connect disparate applications and data sources through robust integration layers, ensuring seamless information flow across the enterprise.",
-        image: ceaImage,
+        image: ceaImage3,
     },
     {
         code: "CLD",
         title: "Cloud-Native Platforms",
         desc: "Design and build cloud-native applications leveraging containers, orchestration, and managed services for elasticity and resilience.",
-        image: ceaImage,
+        image: ceaImage1,
     },
     {
         code: "MOD",
         title: "Legacy Modernization",
         desc: "Re-architect legacy enterprise systems into modern, maintainable platforms without disrupting day-to-day business operations.",
-        image: ceaImage,
+        image: ceaImage2,
     },
     {
         code: "API",
         title: "API Development",
         desc: "Design and build secure, scalable APIs that connect applications, systems, and services efficiently across the enterprise.",
-        image: ceaImage,
+        image: ceaImage3,
     },
 ];
 

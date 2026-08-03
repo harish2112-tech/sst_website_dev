@@ -4,10 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const STRENGTHS = [
-    { value: "1000+", title: "User Training Sessions", description: "Empowering teams with the skills needed for effective software utilization." },
-    { value: "1000+", title: "User Training Sessions", description: "Empowering teams with the skills needed for effective software utilization." },
-    { value: "1000+", title: "User Training Sessions", description: "Empowering teams with the skills needed for effective software utilization." },
-    { value: "1000+", title: "User Training Sessions", description: "Empowering teams with the skills needed for effective software utilization." },
+    { value: "150+", title: "Successful Projects", description: "" },
+    { value: "1000+", title: "Expert Consultants", description: "" },
+    { value: "1000+", title: "Client Satisfaction", description: "" },
+    { value: "1000+", title: "Industries Served", description: "" },
 ];
 
 const containerVariants = {

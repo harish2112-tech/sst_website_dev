@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import assessmentBg from "@/assets/WhatWeDo/Business Advisory/Section11_Technology_Assessment_Bg.svg";
+import arrowIcon from "@/assets/WhatWeDo/Cloud and Infrastructure/icons/Section2_RightArrow.svg";
 
 const CARDS = [
     {

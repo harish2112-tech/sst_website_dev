@@ -4,39 +4,52 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import sectionImage from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section5_Image.svg";
+import sectionImage1 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section5_Image1.jpg";
+import sectionImage2 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section5_Image2.jpg";
+import sectionImage3 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section5_Image3.jpg";
+import sectionImage4 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section5_Image4.jpg";
+import sectionImage5 from "@/assets/WhatWeDo/Cybersecurity & Digital Trust/Section5_Image5.jpg";
 
 const TABS = [
     {
         title: "Security Operations Center (SOC)",
         desc: "A centralized team and platform that continuously monitors, analyzes, and responds to security events across the enterprise, around the clock.",
+        image: sectionImage,
     },
     {
         title: "Security Information & Event Management (SIEM)",
         desc: "Aggregates and correlates log and event data from across the environment to surface anomalies and enable rapid threat detection.",
+        image: sectionImage5,
     },
     {
         title: "Threat Intelligence",
         desc: "Curated intelligence on emerging threats, attacker tactics, and indicators of compromise that sharpens detection and proactive defense.",
+        image: sectionImage2,
     },
     {
         title: "Endpoint Detection & Response",
         desc: "Continuous monitoring of endpoints to detect, investigate, and automatically contain suspicious activity before it spreads.",
+        image: sectionImage3,
     },
     {
         title: "Security Monitoring",
         desc: "Round-the-clock visibility across networks, applications, and cloud workloads to catch issues before they escalate into incidents.",
+        image: sectionImage4,
     },
     {
         title: "Incident Response",
         desc: "A structured, rehearsed process to contain, eradicate, and recover from security incidents while minimizing business impact.",
+        image: sectionImage5,
     },
     {
         title: "Digital Forensics",
         desc: "Deep investigation into security incidents to determine root cause, scope of impact, and evidence for compliance or legal action.",
+        image: sectionImage2,
     },
     {
         title: "Threat Hunting",
         desc: "Proactive, hypothesis-driven searches for hidden adversaries and threats that evade automated detection controls.",
+        image: sectionImage3,
     },
 ];
 
@@ -92,7 +105,23 @@ export default function SecurityOperations() {
                 </div>
 
                 <div className="relative flex-1 h-full min-w-0 aspect-[825/527] overflow-hidden">
-                    <Image src={sectionImage} alt="" fill className="md:ml-15 object-cover" />
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeIndex}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.4 }}
+                            className="absolute inset-0"
+                        >
+                            <Image
+                                src={TABS[activeIndex].image}
+                                alt={TABS[activeIndex].title}
+                                fill
+                                className="md:ml-15 object-cover"
+                            />
+                        </motion.div>
+                    </AnimatePresence>
 
                     <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 lg:px-0 lg:block">
                         <div className="relative w-full sm:w-[571px] bg-white p-6 sm:p-10 min-h-[240px] sm:min-h-[300px] flex items-center lg:absolute lg:right-[40px] lg:bottom-[0px] lg:w-[680px] lg:h-[460px] lg:min-h-0">
